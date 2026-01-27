@@ -532,12 +532,11 @@
             max-width: 1000px;
             position: relative;
             z-index: 10;
-            background: rgba(10, 14, 26, 0.6);
-            padding: 4rem 3rem;
-            border-radius: 30px;
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(16, 185, 129, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 60px rgba(16, 185, 129, 0.1);
+            padding: 0;
+            background: transparent;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
         }
 
         .hero-badge {
@@ -689,8 +688,8 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
+            margin: 3rem auto 0;
+            max-width: 900px;
             animation: fadeIn 1s ease 1s both;
         }
 
@@ -776,6 +775,7 @@
             gap: 1.5rem;
             justify-content: center;
             animation: fadeIn 1s ease 1.2s both;
+            margin-top: 2rem;
         }
 
         .btn {
@@ -860,6 +860,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
+            z-index: 10;
         }
 
         .scroll-indicator::before {
@@ -1636,6 +1637,13 @@
             body {
                 cursor: auto;
             }
+
+            /* Hide data viz elements on mobile */
+            .code-animation,
+            .live-counter,
+            .loading-bar-container {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1727,7 +1735,7 @@
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
         </div>
-        <div class="hero-content">
+            <div class="hero-content">
             <div class="hero-badge">✨ Available for Opportunities</div>
             <h1>Sujit Bhattarai</h1>
             <p class="subtitle">Python Developer & Data Analyst</p>
@@ -1880,10 +1888,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="section-header" style="margin-top: 6rem;">
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
                 <div class="section-badge">💡 Portfolio</div>
-                <h3 class="section-title">Featured Projects</h3>
+                <h2 class="section-title">Featured Projects</h2>
                 <p class="section-description">Showcasing my expertise in data analysis and full-stack development</p>
             </div>
             
