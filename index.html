@@ -96,15 +96,240 @@
             66% { transform: translate(5%, -5%) rotate(240deg); }
         }
 
-        /* Matrix Rain Effect */
-        #matrix-canvas {
+        /* Binary Rain Effect */
+        .binary-rain {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.1;
+        }
+
+        /* Network Connections */
+        #network-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.2;
+        }
+
+        /* Data Stream Lines */
+        .data-stream {
+            position: fixed;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(180deg, transparent, var(--primary), transparent);
+            animation: stream-flow 3s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes stream-flow {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Animated Code Block */
+        .code-animation {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            background: rgba(10, 14, 26, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            animation: fadeIn 2s ease 1s both;
+            max-width: 300px;
+        }
+
+        .code-line {
+            margin: 0.3rem 0;
+            opacity: 0;
+            animation: typeIn 0.5s ease forwards;
+        }
+
+        .code-line:nth-child(1) { animation-delay: 1.2s; }
+        .code-line:nth-child(2) { animation-delay: 1.5s; }
+        .code-line:nth-child(3) { animation-delay: 1.8s; }
+        .code-line:nth-child(4) { animation-delay: 2.1s; }
+        .code-line:nth-child(5) { animation-delay: 2.4s; }
+
+        @keyframes typeIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .code-comment {
+            color: #6ee7b7;
+        }
+
+        /* Data Visualization Circles */
+        .data-viz {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: pulse-ring 4s ease-in-out infinite;
+        }
+
+        .data-viz-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .data-viz-2 {
+            bottom: 30%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .data-viz-3 {
+            top: 60%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% { 
+                transform: scale(1.3);
+                opacity: 0.4;
+            }
+        }
+
+        /* Live Data Counter */
+        .live-counter {
+            position: absolute;
+            top: 15%;
+            left: 5%;
+            background: rgba(10, 14, 26, 0.9);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+            animation: fadeIn 2s ease 1.5s both;
+        }
+
+        .counter-label {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            letter-spacing: 2px;
+        }
+
+        .counter-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 0.3rem;
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Loading Bar Animation */
+        .loading-bar-container {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            width: 250px;
+            background: rgba(10, 14, 26, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            animation: fadeIn 2s ease 2s both;
+        }
+
+        .loading-label {
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            animation: loadProgress 3s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+
+        /* Binary Background */
+        .binary-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: var(--primary);
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* Graph Lines */
+        .graph-line {
+            position: absolute;
+            height: 1px;
+            background: var(--primary);
+            opacity: 0.3;
+            animation: drawLine 2s ease forwards;
+        }
+
+        .graph-line-1 {
+            top: 25%;
+            left: 0;
+            animation-delay: 0.5s;
+        }
+
+        .graph-line-2 {
+            top: 50%;
+            left: 0;
+            animation-delay: 1s;
+        }
+
+        .graph-line-3 {
+            top: 75%;
+            left: 0;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes drawLine {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
         /* Floating Particles */
@@ -279,6 +504,18 @@
             padding: 6rem 2rem 2rem;
             position: relative;
             overflow: hidden;
+            background: radial-gradient(ellipse at center, rgba(10, 14, 26, 0.7) 0%, rgba(10, 14, 26, 0.95) 100%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 0;
         }
 
         .hero-shapes {
@@ -352,21 +589,30 @@
             color: white;
             max-width: 1000px;
             position: relative;
-            z-index: 1;
+            z-index: 10;
+            background: rgba(10, 14, 26, 0.6);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 60px rgba(16, 185, 129, 0.1);
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.2);
+            background: rgba(16, 185, 129, 0.3);
             border: 2px solid var(--primary);
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 2rem;
             border-radius: 50px;
             margin-bottom: 2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
             animation: slideDown 1s ease, pulse-border 2s infinite;
             backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), inset 0 0 20px rgba(16, 185, 129, 0.2);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            letter-spacing: 1px;
         }
 
         @keyframes pulse-border {
@@ -451,12 +697,18 @@
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: rgba(255,255,255,0.9);
+            color: #e0e0e0;
             animation: fadeIn 1s ease 0.6s both;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.8;
+            line-height: 1.9;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.3);
+            font-weight: 400;
+            background: linear-gradient(180deg, #ffffff 0%, #d1d5db 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         @keyframes fadeIn {
@@ -465,13 +717,15 @@
         }
 
         .typing-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #6ee7b7;
             margin-bottom: 2.5rem;
             font-family: 'Courier New', monospace;
             animation: fadeIn 1s ease 0.8s both;
-            min-height: 40px;
-            text-shadow: 0 0 10px rgba(110, 231, 183, 0.5);
+            min-height: 50px;
+            text-shadow: 0 0 20px rgba(110, 231, 183, 0.8), 0 0 40px rgba(110, 231, 183, 0.5);
+            font-weight: 600;
+            letter-spacing: 2px;
         }
 
         .typing-cursor {
@@ -501,13 +755,14 @@
         .stat-item {
             text-align: center;
             padding: 2rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: rgba(16, 185, 129, 0.15);
+            border: 2px solid rgba(16, 185, 129, 0.4);
             border-radius: 20px;
             backdrop-filter: blur(10px);
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(16, 185, 129, 0.1);
         }
 
         .stat-item::before {
@@ -542,13 +797,14 @@
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #ffffff 0%, #10b981 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
             z-index: 1;
             animation: count-up 2s ease-out;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes count-up {
@@ -563,11 +819,14 @@
         }
 
         .stat-label {
-            color: rgba(255, 255, 255, 0.8);
+            color: #ffffff;
             margin-top: 0.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
             position: relative;
             z-index: 1;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(16, 185, 129, 0.5);
+            letter-spacing: 0.5px;
         }
 
         .cta-buttons {
@@ -1464,6 +1723,42 @@
 
     <!-- Matrix Canvas -->
     <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Network Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Data Visualization Elements -->
+    <div class="data-viz data-viz-1"></div>
+    <div class="data-viz data-viz-2"></div>
+    <div class="data-viz data-viz-3"></div>
+
+    <!-- Live Code Animation -->
+    <div class="code-animation">
+        <div class="code-line"><span style="color: #fbbf24;">import</span> pandas <span style="color: #fbbf24;">as</span> pd</div>
+        <div class="code-line"><span style="color: #fbbf24;">import</span> numpy <span style="color: #fbbf24;">as</span> np</div>
+        <div class="code-line"><span class="code-comment"># Loading dataset...</span></div>
+        <div class="code-line">df = pd.read_csv(<span style="color: #a78bfa;">'data.csv'</span>)</div>
+        <div class="code-line">print(<span style="color: #a78bfa;">f'Success: {len(df)} rows'</span>)</div>
+    </div>
+
+    <!-- Live Counter -->
+    <div class="live-counter">
+        <div class="counter-label">LINES OF CODE</div>
+        <div class="counter-value" id="code-counter">0</div>
+    </div>
+
+    <!-- Loading Bar -->
+    <div class="loading-bar-container">
+        <div class="loading-label">PROCESSING DATA_ANALYSIS.PY</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Graph Lines -->
+    <div class="graph-line graph-line-1"></div>
+    <div class="graph-line graph-line-2"></div>
+    <div class="graph-line graph-line-3"></div>
 
     <!-- Animated Background -->
     <div class="bg-animation"></div>
@@ -1658,6 +1953,362 @@
                         <h3>Customer Segmentation Analysis</h3>
                         <p>Developed a comprehensive customer segmentation model using Python, Pandas, and scikit-learn. Applied K-means clustering algorithms to analyze complex purchasing patterns and segment customers into distinct behavioral groups for targeted marketing strategies. Created interactive visualizations using Matplotlib and Seaborn to communicate insights effectively.</p>
                         <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Statistics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🚗</div>
+                    <div class="project-content">
+                        <div class="project-tag">Computer Vision</div>
+                        <h3>License Plate Detection System</h3>
+                        <p>Developed an intelligent license plate detection system using OpenCV and OCR technologies. Implemented advanced image processing techniques including edge detection, contour analysis, and character recognition for accurately identifying vehicle license plates and extracting alphanumeric data in real-time scenarios.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Image Processing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🛒</div>
+                    <div class="project-content">
+                        <div class="project-tag">Full Stack</div>
+                        <h3>E-commerce Analytics Platform</h3>
+                        <p>Created a comprehensive analytics platform for e-commerce data using Django and PostgreSQL. Implemented robust data pipelines for tracking user behavior, conversion funnels, revenue metrics, and customer lifetime value. Built interactive dashboards with Chart.js providing real-time business intelligence and KPI monitoring.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <div class="project-content">
+                        <div class="project-tag">Web Development</div>
+                        <h3>Laravel Web Application</h3>
+                        <p>Built a comprehensive full-stack web application using the Laravel framework. Implemented secure user authentication with role-based access control, efficient database management with Eloquent ORM, RESTful API endpoints, and a fully responsive design ensuring optimal user experience across all devices.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Blade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="mailto:bhattaraisujit79@gmail.com" class="social-link">✉️</a>
+            <a href="tel:9805821214" class="social-link">📞</a>
+        </div>
+        <p>&copy; 2026 Sujit Bhattarai. All rights reserved. Crafted with passion 💚</p>
+    </footer>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = '01アイウエオカキクケコサシスセソタチツテト';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(10, 14, 26, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#10b981';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 35);
+
+        // Network Connections Canvas
+        const networkCanvas = document.getElementById('network-canvas');
+        const networkCtx = networkCanvas.getContext('2d');
+        networkCanvas.width = window.innerWidth;
+        networkCanvas.height = window.innerHeight;
+
+        const nodes = [];
+        const nodeCount = 50;
+
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * networkCanvas.width,
+                y: Math.random() * networkCanvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5
+            });
+        }
+
+        function drawNetwork() {
+            networkCtx.clearRect(0, 0, networkCanvas.width, networkCanvas.height);
+            
+            // Update and draw nodes
+            nodes.forEach(node => {
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > networkCanvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > networkCanvas.height) node.vy *= -1;
+
+                networkCtx.beginPath();
+                networkCtx.arc(node.x, node.y, 2, 0, Math.PI * 2);
+                networkCtx.fillStyle = '#10b981';
+                networkCtx.fill();
+            });
+
+            // Draw connections
+            nodes.forEach((node1, i) => {
+                nodes.slice(i + 1).forEach(node2 => {
+                    const dx = node1.x - node2.x;
+                    const dy = node1.y - node2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        networkCtx.beginPath();
+                        networkCtx.moveTo(node1.x, node1.y);
+                        networkCtx.lineTo(node2.x, node2.y);
+                        networkCtx.strokeStyle = `rgba(16, 185, 129, ${1 - distance / 150})`;
+                        networkCtx.stroke();
+                    }
+                });
+            });
+        }
+
+        setInterval(drawNetwork, 50);
+
+        // Live Code Counter
+        let codeCount = 0;
+        const targetCount = 15847;
+        const counterElement = document.getElementById('code-counter');
+
+        function updateCounter() {
+            if (codeCount < targetCount) {
+                codeCount += Math.floor(Math.random() * 500) + 100;
+                if (codeCount > targetCount) codeCount = targetCount;
+                counterElement.textContent = codeCount.toLocaleString();
+                setTimeout(updateCounter, 50);
+            }
+        }
+
+        setTimeout(updateCounter, 2000);
+
+        // Data Stream Lines
+        function createDataStream() {
+            const stream = document.createElement('div');
+            stream.className = 'data-stream';
+            stream.style.left = Math.random() * 100 + '%';
+            stream.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            document.body.appendChild(stream);
+
+            setTimeout(() => {
+                stream.remove();
+            }, 5000);
+        }
+
+        setInterval(createDataStream, 2000);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            networkCanvas.width = window.innerWidth;
+            networkCanvas.height = window.innerHeight;
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Cursor expand on hover
+        const hoverElements = document.querySelectorAll('a, button, .btn, .project-card, .skill-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('expand');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('expand');
+            });
+        });
+
+        // Create particles
+        const particlesContainer = document.getElementById('particles');
+        const particleTypes = ['particle-1', 'particle-2', 'particle-3'];
+        
+        for (let i = 0; i < 60; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle ' + particleTypes[Math.floor(Math.random() * particleTypes.length)];
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Typing animation
+        const texts = [
+            'Data Analyst',
+            'Django Expert',
+            'Backend Developer',
+            'Python Specialist'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing');
+
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="typing-cursor"></span>';
+                charIndex--;
+            } else {
+                typingElement.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="typing-cursor"></span>';
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(type, speed);
+        }
+
+        type();
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.skill-card, .timeline-item, .project-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.05;
+                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+            });
+        });
+
+        // Add sparkle effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.95) {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.width = '4px';
+                sparkle.style.height = '4px';
+                sparkle.style.background = '#10b981';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '9999';
+                sparkle.style.boxShadow = '0 0 10px #10b981';
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.style.transition = 'all 0.5s ease';
+                    sparkle.style.transform = 'translateY(-20px) scale(0)';
+                    sparkle.style.opacity = '0';
+                }, 10);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">NumPy</span>
                             <span class="tech-tag">Matplotlib</span>
