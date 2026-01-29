@@ -66,7 +66,7 @@
             padding: 8rem 2rem 4rem;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(ellipse at center, rgba(10, 14, 26, 0.7) 0%, rgba(10, 14, 26, 0.95) 100%);
+            background: radial-gradient(ellipse at center, rgba(10, 14, 26, 0.85) 0%, rgba(10, 14, 26, 0.98) 100%);
         }
 
         .hero::after {
@@ -76,7 +76,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
             z-index: 0;
         }
 
@@ -90,18 +90,19 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.3);
+            background: rgba(16, 185, 129, 0.4);
             border: 2px solid var(--primary);
             padding: 0.6rem 2rem;
             border-radius: 50px;
             margin-bottom: 2rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #ffffff;
             animation: slideDown 1s ease, pulse-border 2s infinite;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.7), inset 0 0 30px rgba(16, 185, 129, 0.3);
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 1), 0 0 30px rgba(16, 185, 129, 0.8);
+            letter-spacing: 1.5px;
         }
 
         @keyframes pulse-border {
@@ -117,23 +118,20 @@
         .hero h1 {
             font-size: 5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
             animation: slideDown 1s ease 0.2s both;
             letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 1), 0 0 40px rgba(255, 255, 255, 0.3);
+            font-weight: 800;
         }
 
         .hero .subtitle {
             font-size: 2.5rem;
-            background: linear-gradient(135deg, #10b981 0%, #fbbf24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #10b981;
             margin-bottom: 1.5rem;
             animation: slideUp 1s ease 0.4s both;
             font-weight: 700;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 1), 0 0 30px rgba(16, 185, 129, 0.8);
         }
 
         @keyframes slideUp {
@@ -144,17 +142,14 @@
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #e0e0e0;
+            color: #f0f0f0;
             animation: fadeIn 1s ease 0.6s both;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.9;
-            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
-            background: linear-gradient(180deg, #ffffff 0%, #d1d5db 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 0.8);
+            font-weight: 400;
         }
 
         @keyframes fadeIn {
@@ -169,8 +164,8 @@
             font-family: 'Courier New', monospace;
             animation: fadeIn 1s ease 0.8s both;
             min-height: 50px;
-            text-shadow: 0 0 20px rgba(110, 231, 183, 0.8);
-            font-weight: 600;
+            text-shadow: 0 0 30px rgba(110, 231, 183, 1), 0 3px 15px rgba(0, 0, 0, 1);
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
@@ -201,12 +196,12 @@
         .stat-item {
             text-align: center;
             padding: 2rem;
-            background: rgba(16, 185, 129, 0.15);
-            border: 2px solid rgba(16, 185, 129, 0.4);
+            background: rgba(16, 185, 129, 0.25);
+            border: 2px solid rgba(16, 185, 129, 0.6);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(16, 185, 129, 0.2);
         }
 
         .stat-item:hover {
@@ -218,18 +213,16 @@
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #ffffff 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 1), 0 0 30px rgba(16, 185, 129, 0.8);
         }
 
         .stat-label {
             color: #ffffff;
             margin-top: 0.5rem;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 0.8);
         }
 
         .cta-buttons {
