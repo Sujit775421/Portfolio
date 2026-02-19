@@ -41,6 +41,8 @@
             --code-bg: rgba(16, 185, 129, 0.05);
             --code-text: #059669;
             --focus-color: #059669; /* For accessibility focus styles */
+            --orb-color: rgba(16, 185, 129, 0.6);
+            --circuit-color: rgba(16, 185, 129, 0.3);
         }
         html {
             scroll-behavior: smooth;
@@ -183,7 +185,7 @@
             background: var(--white);
             transition: all 0.3s ease;
         }
-        /* Hero with code matrix effect and enhanced animations */
+        /* Hero with enhanced space-themed background, glowing orbs, circuit lines, and floating code */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -209,23 +211,109 @@
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+                linear-gradient(var(--circuit-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--circuit-color) 1px, transparent 1px);
             background-size: 40px 40px;
-            opacity: 0.5;
+            opacity: 0.3;
             animation: codeMatrix 10s linear infinite;
         }
         @keyframes codeMatrix {
-            0% { background-position: 0 0; opacity: 0.5; }
-            50% { opacity: 0.8; }
-            100% { background-position: 0 40px; opacity: 0.5; }
+            0% { background-position: 0 0; opacity: 0.3; }
+            50% { opacity: 0.5; }
+            100% { background-position: 0 40px; opacity: 0.3; }
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--orb-color);
+            box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-dark);
+            animation: orbFloat 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .orb:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 12s;
+        }
+        .orb:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 80%;
+            animation-delay: 2s;
+            animation-duration: 18s;
+        }
+        .orb:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            left: 30%;
+            animation-delay: 4s;
+            animation-duration: 15s;
+        }
+        .orb:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            top: 70%;
+            left: 60%;
+            animation-delay: 6s;
+            animation-duration: 20s;
+        }
+        .orb:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            top: 30%;
+            left: 50%;
+            animation-delay: 8s;
+            animation-duration: 14s;
+        }
+        @keyframes orbFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+            50% { transform: translateY(-50px) scale(1.2); opacity: 1; }
+        }
+        .code-snippet {
+            position: absolute;
+            color: var(--primary);
+            font-family: monospace;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            animation: codeFloat 25s linear infinite;
+            white-space: pre;
+            pointer-events: none;
+        }
+        .code-snippet:nth-child(1) {
+            top: 25%;
+            left: 15%;
+            animation-delay: 0s;
+            animation-duration: 22s;
+        }
+        .code-snippet:nth-child(2) {
+            top: 45%;
+            left: 75%;
+            animation-delay: 5s;
+            animation-duration: 28s;
+        }
+        .code-snippet:nth-child(3) {
+            top: 65%;
+            left: 35%;
+            animation-delay: 10s;
+            animation-duration: 25s;
+        }
+        @keyframes codeFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
         }
         .hero-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
             z-index: 2;
+            text-align: center;
             animation: fadeInUp 1s ease;
         }
         @keyframes fadeInUp {
@@ -265,11 +353,11 @@
             50% { opacity: 0.5; transform: scale(1.2); }
         }
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
             font-weight: 800;
             color: var(--white);
             margin-bottom: 1.5rem;
-            line-height: 1.1;
+            line-height: 1.2;
             animation: fadeInUp 1s ease 0.4s both, textGlow 3s ease infinite alternate;
             text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
@@ -284,12 +372,13 @@
             background-clip: text;
         }
         .hero .subtitle {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: #94a3b8;
             margin-bottom: 2rem;
             font-weight: 400;
             animation: fadeInUp 1s ease 0.6s both;
-            max-width: 700px;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .hero-cta {
             display: flex;
@@ -297,6 +386,7 @@
             flex-wrap: wrap;
             animation: fadeInUp 1s ease 0.8s both;
             margin-bottom: 3rem;
+            justify-content: center;
         }
         .btn {
             padding: 1rem 2rem;
@@ -940,6 +1030,22 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+            .hero-content {
+                padding: 0 1rem;
+            }
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+            .hero .subtitle {
+                font-size: clamp(0.9rem, 4vw, 1.1rem);
+            }
+            .orb {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            .code-snippet {
+                font-size: 0.6rem;
+            }
         }
         @media (max-width: 640px) {
             .hero-stats {
@@ -991,10 +1097,30 @@
     <section id="home" class="hero" role="banner">
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
+        <!-- Glowing interactive orbs -->
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <!-- Floating code snippets -->
+        <div class="code-snippet">
+            def optimize_seo():<br>
+            &nbsp;&nbsp;return "Data Insights"<br>
+        </div>
+        <div class="code-snippet">
+            class DjangoApp:<br>
+            &nbsp;&nbsp;def __init__(self):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;self.scale = True<br>
+        </div>
+        <div class="code-snippet">
+            analytics = pandas.read_csv('data.csv')<br>
+            insights = analytics.analyze()<br>
+        </div>
         <div class="hero-content" id="main-content" tabindex="-1">
             <div class="hero-badge">Available for Projects</div>
-            <h1>Crafting Scalable Backends, Data Insights, SEO & Digital Marketing Strategies with <span class="highlight">Python, Django & Analytics</span></h1>
-            <p class="subtitle">Versatile IT professional with hands-on experience in backend Python/Django development, SEO and digital marketing, and data analytics. Skilled in building scalable web applications, optimizing online platforms for visibility and user experience, and using analytics to drive data-informed decisions. Seeking to contribute to an innovative and growth-oriented organization where I can apply both technical and analytical skills to deliver impactful solutions.</p>
+            <h1>Crafting Scalable Backends,<br>Data Insights, SEO & Digital<br>Marketing Strategies with <span class="highlight">Python, Django & Analytics</span></h1>
+            <p class="subtitle">Versatile IT professional with hands-on experience in<br>backend Python/Django development, SEO and digital<br>marketing, and data analytics. Skilled in building scalable<br>web applications, optimizing online platforms for visibility<br>and user experience, and using analytics to drive data-<br>informed decisions. Seeking to contribute to an<br>innovative and growth-oriented organization where I can<br>apply both technical and analytical skills to deliver<br>impactful solutions.</p>
            
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary" aria-label="View my work">
@@ -1006,9 +1132,9 @@
                     <span>✉</span>
                 </a>
             </div>
-            <!-- <div class="hero-stats">
+            <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">2+</span>
+                    <span class="stat-number">3+</span>
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-item">
@@ -1019,7 +1145,7 @@
                     <span class="stat-number">100%</span>
                     <span class="stat-label">Client Satisfaction</span>
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
     <!-- Experience & Education Section -->
