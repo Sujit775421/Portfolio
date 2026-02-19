@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+   
     <!-- SEO Optimization -->
-    <title>Sujit Bhattarai | Python & Django Backend Developer in Nepal</title>
-    <meta name="description" content="Sujit Bhattarai - Expert Python & Django backend developer in Kathmandu, Nepal. Specializing in scalable web applications, data analysis, and API development. Available for projects.">
-    <meta name="keywords" content="Sujit Bhattarai, Python Developer Nepal, Django Developer, Backend Developer Kathmandu, Web Developer Nepal, Data Analyst Nepal">
+    <title>Sujit Bhattarai | Expert Python/Django Developer, Data Analyst, SEO & Digital Marketing Specialist in Nepal</title>
+    <meta name="description" content="Sujit Bhattarai - Expert Python & Django backend developer, data analyst, SEO and digital marketing specialist in Pokhara, Nepal. Specializing in scalable web applications, data-driven insights, API development, online optimization, and digital strategies. Available for projects.">
+    <meta name="keywords" content="Sujit Bhattarai, Python Developer Nepal, Django Developer Nepal, Backend Developer Pokhara, Data Analyst Nepal, SEO Specialist Nepal, Digital Marketing Nepal, Web Developer Nepal, Kathmandu Developer, Pokhara IT Professional">
     <meta name="author" content="Sujit Bhattarai">
-    
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="JEind8-m6Uw_rr3DU5HYtPzeBRJd7fcnSzRlfsVjCIY" />
+   
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Sujit Bhattarai - Python & Django Backend Developer">
-    <meta property="og:description" content="Expert backend developer specializing in Python, Django, and data analysis. Building scalable solutions in Nepal.">
+    <meta property="og:title" content="Sujit Bhattarai - Python/Django Developer, Data Analyst, SEO & Digital Marketing Expert">
+    <meta property="og:description" content="Versatile IT professional specializing in Python/Django backend development, data analysis, SEO, and digital marketing. Building scalable solutions and driving online growth in Nepal.">
     <meta property="og:url" content="https://www.bhattaraisujit.com.np/">
-    
+    <meta property="og:image" content="https://www.bhattaraisujit.com.np/og-image.jpg"> <!-- Add your OG image URL here -->
+   
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.bhattaraisujit.com.np/">
-    
+   
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --primary: #10b981;
             --primary-dark: #059669;
@@ -36,20 +38,41 @@
             --text: #1f2937;
             --text-light: #64748b;
             --white: #ffffff;
+            --code-bg: rgba(16, 185, 129, 0.05);
+            --code-text: #059669;
+            --focus-color: #059669; /* For accessibility focus styles */
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--text);
             overflow-x: hidden;
         }
-
-        /* ===== NAVIGATION ===== */
+        code {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px;
+            z-index: 1001;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        /* Enhanced Navigation with tech glow */
         .navbar {
             position: fixed;
             top: 0;
@@ -61,12 +84,10 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(16, 185, 129, 0.1);
         }
-
         .navbar.scrolled {
             padding: 0.75rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
         }
-
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -75,7 +96,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -84,27 +104,29 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            animation: logoGlow 2s ease-in-out infinite alternate;
         }
-
+        @keyframes logoGlow {
+            from { text-shadow: 0 0 5px var(--primary); }
+            to { text-shadow: 0 0 15px var(--primary); }
+        }
         .logo span {
             color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
         }
-
         .nav-menu {
             display: flex;
             gap: 2.5rem;
             list-style: none;
             align-items: center;
         }
-
         .nav-link {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -114,16 +136,20 @@
             height: 2px;
             background: var(--primary);
             transition: width 0.3s ease;
+            box-shadow: 0 0 5px var(--primary);
         }
-
         .nav-link:hover {
             color: var(--primary);
+            text-shadow: 0 0 5px var(--primary);
+            transform: scale(1.05);
         }
-
         .nav-link:hover::after {
             width: 100%;
         }
-
+        .nav-link:focus {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .nav-cta {
             background: var(--primary);
             color: var(--white);
@@ -131,33 +157,33 @@
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
         }
-
         .nav-cta:hover {
             background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.6);
         }
-
+        .nav-cta:focus {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .nav-cta::after {
             display: none;
         }
-
         .mobile-toggle {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
         }
-
         .mobile-toggle span {
             width: 25px;
             height: 3px;
             background: var(--white);
             transition: all 0.3s ease;
         }
-
-        /* ===== HERO SECTION ===== */
+        /* Hero with code matrix effect and enhanced animations */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -167,31 +193,33 @@
             align-items: center;
             padding-top: 80px;
         }
-
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
             animation: bgFloat 20s ease infinite;
         }
-
         @keyframes bgFloat {
             0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(20px, -20px); }
+            50% { transform: translate(20px, -20px) rotate(2deg); }
         }
-
         .hero-grid {
             position: absolute;
             inset: 0;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
             opacity: 0.5;
+            animation: codeMatrix 10s linear infinite;
         }
-
+        @keyframes codeMatrix {
+            0% { background-position: 0 0; opacity: 0.5; }
+            50% { opacity: 0.8; }
+            100% { background-position: 0 40px; opacity: 0.5; }
+        }
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -200,18 +228,16 @@
             z-index: 2;
             animation: fadeInUp 1s ease;
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(30px) scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
-
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -224,35 +250,39 @@
             font-weight: 600;
             font-size: 0.9rem;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
+            animation: fadeInUp 1s ease 0.2s both, glowPulse 2s ease infinite;
         }
-
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.6); }
+        }
         .hero-badge::before {
             content: '●';
             animation: pulse 2s ease infinite;
         }
-
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
-
         .hero h1 {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
             color: var(--white);
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            animation: fadeInUp 1s ease 0.4s both;
+            animation: fadeInUp 1s ease 0.4s both, textGlow 3s ease infinite alternate;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
-
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+            to { text-shadow: 0 0 20px rgba(16, 185, 129, 0.8); }
+        }
         .hero h1 .highlight {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .hero .subtitle {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
             color: #94a3b8;
@@ -261,7 +291,6 @@
             animation: fadeInUp 1s ease 0.6s both;
             max-width: 700px;
         }
-
         .hero-cta {
             display: flex;
             gap: 1.25rem;
@@ -269,7 +298,6 @@
             animation: fadeInUp 1s ease 0.8s both;
             margin-bottom: 3rem;
         }
-
         .btn {
             padding: 1rem 2rem;
             border-radius: 10px;
@@ -283,31 +311,34 @@
             cursor: pointer;
             border: none;
         }
-
         .btn-primary {
             background: var(--primary);
             color: var(--white);
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
-
         .btn-primary:hover {
             background: var(--primary-dark);
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05) rotate(2deg);
             box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
         }
-
+        .btn-primary:focus {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .btn-secondary {
             background: transparent;
             color: var(--white);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--primary);
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05) rotate(-2deg);
         }
-
+        .btn-secondary:focus {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -315,11 +346,21 @@
             max-width: 600px;
             animation: fadeInUp 1s ease 1s both;
         }
-
         .stat-item {
             text-align: left;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
         }
-
+        .stat-item:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+        }
+        .stat-item:focus-within {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
@@ -328,29 +369,29 @@
             line-height: 1;
             margin-bottom: 0.5rem;
         }
-
         .stat-label {
             color: #94a3b8;
             font-size: 0.9rem;
         }
-
-        /* ===== SECTIONS ===== */
+        /* Sections */
         section {
             padding: 6rem 0;
             position: relative;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
+            animation: sectionHeaderAnim 1.5s ease both;
         }
-
+        @keyframes sectionHeaderAnim {
+            from { opacity: 0; transform: rotateX(-90deg); }
+            to { opacity: 1; transform: rotateX(0); }
+        }
         .section-tag {
             display: inline-block;
             background: rgba(16, 185, 129, 0.1);
@@ -361,368 +402,30 @@
             font-size: 0.875rem;
             margin-bottom: 1rem;
             letter-spacing: 0.5px;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
         }
-
         .section-title {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
             color: var(--dark);
             margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
         .section-description {
             font-size: 1.125rem;
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
         }
-
-        /* ===== ABOUT SECTION ===== */
-        #about {
-            background: var(--light);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-content h3 {
-            font-size: 1.75rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            margin-bottom: 1.25rem;
-            line-height: 1.8;
-        }
-
-        .about-highlights {
-            display: grid;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: start;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .highlight-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .highlight-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .contact-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 100px;
-        }
-
-        .contact-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--dark);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            background: var(--light);
-        }
-
-        .contact-item:hover {
-            background: rgba(16, 185, 129, 0.1);
-            transform: translateX(5px);
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.125rem;
-        }
-
-        .contact-item a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* ===== PROJECTS SECTION ===== */
-        #projects {
-            background: var(--white);
-        }
-
-        .projects-grid {
-            display: grid;
-            gap: 3rem;
-        }
-
-        .project-card {
-            background: var(--light);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(251, 191, 36, 0.1));
-            padding: 2rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .project-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tag {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.35rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .project-icon {
-            font-size: 2.5rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.75rem;
-            color: var(--dark);
-            margin-bottom: 0.75rem;
-        }
-
-        .project-body {
-            padding: 2rem;
-        }
-
-        .project-section {
-            margin-bottom: 2rem;
-        }
-
-        .project-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .project-section h4 {
-            font-size: 0.9rem;
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.5px;
-        }
-
-        .project-section p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        .project-section ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .project-section li {
-            color: var(--text-light);
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .project-section li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tech-tag {
-            background: var(--white);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--primary);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--primary);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .project-link.secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .project-link.secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* ===== SKILLS SECTION ===== */
-        #skills {
-            background: var(--light);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .skill-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-card h3 {
-            font-size: 1.25rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .skill-card ul {
-            list-style: none;
-        }
-
-        .skill-card li {
-            padding: 0.75rem 0;
-            color: var(--text-light);
-            border-bottom: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .skill-card li:last-child {
-            border-bottom: none;
-        }
-
-        .skill-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .skill-card li:hover {
-            padding-left: 2rem;
-            color: var(--primary);
-        }
-
-        /* ===== EXPERIENCE SECTION ===== */
+        /* Experience Section with timeline enhancements */
         #experience {
             background: var(--white);
         }
-
         .timeline {
             position: relative;
             max-width: 900px;
             margin: 0 auto;
         }
-
         .timeline::before {
             content: '';
             position: absolute;
@@ -731,17 +434,27 @@
             width: 3px;
             height: 100%;
             background: linear-gradient(180deg, var(--primary), var(--accent));
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+            animation: timelineGlow 3s ease infinite alternate;
         }
-
+        @keyframes timelineGlow {
+            from { box-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
+            to { box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
+        }
         .timeline-item {
             margin-bottom: 3rem;
             position: relative;
+            opacity: 0;
+            animation: timelineItemAnim 1s ease forwards;
+            animation-delay: calc(0.2s * var(--order));
         }
-
+        @keyframes timelineItemAnim {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: auto;
         }
-
         .timeline-content {
             width: 45%;
             background: var(--light);
@@ -750,13 +463,15 @@
             transition: all 0.3s ease;
             border: 1px solid #e2e8f0;
         }
-
         .timeline-content:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
             border-color: var(--primary);
         }
-
+        .timeline-content:focus-within {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .timeline-content::before {
             content: '';
             position: absolute;
@@ -765,17 +480,19 @@
             height: 20px;
             background: var(--primary);
             border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--white), 0 0 0 6px var(--primary);
+            box-shadow: 0 0 0 4px var(--white), 0 0 10px var(--primary);
+            animation: nodePulse 1.5s ease infinite;
         }
-
+        @keyframes nodePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
         .timeline-item:nth-child(odd) .timeline-content::before {
             left: -60px;
         }
-
         .timeline-item:nth-child(even) .timeline-content::before {
             right: -60px;
         }
-
         .timeline-badge {
             display: inline-block;
             background: var(--primary);
@@ -786,77 +503,313 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
-
         .timeline-content h3 {
             font-size: 1.5rem;
             color: var(--dark);
             margin-bottom: 0.5rem;
         }
-
         .timeline-content .company {
             color: var(--primary);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-
         .timeline-content .date {
             color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-
         .timeline-content p {
             color: var(--text-light);
             line-height: 1.7;
         }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: var(--white);
-            padding: 4rem 0 2rem;
+        /* Skills Section with hover effects */
+        #skills {
+            background: var(--light);
         }
-
-        .footer-content {
+        .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
-
-        .footer-section h3 {
+        .skill-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            opacity: 0;
+            animation: skillCardAnim 1s ease forwards;
+            animation-delay: calc(0.2s * var(--order));
+        }
+        @keyframes skillCardAnim {
+            from { opacity: 0; transform: scale(0.8) rotate(-10deg); }
+            to { opacity: 1; transform: scale(1) rotate(0); }
+        }
+        .skill-card:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.2);
+            border-color: var(--primary);
+        }
+        .skill-card:focus-within {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+            animation: iconSpin 5s linear infinite;
         }
-
-        .footer-section p {
-            color: #94a3b8;
-            line-height: 1.8;
+        @keyframes iconSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-
-        .footer-links {
+        .skill-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        .skill-card ul {
             list-style: none;
         }
-
-        .footer-links li {
+        .skill-card li {
+            padding: 0.75rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .skill-card li:last-child {
+            border-bottom: none;
+        }
+        .skill-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .skill-card li:hover {
+            padding-left: 2rem;
+            color: var(--primary);
+            text-shadow: 0 0 5px var(--primary);
+            transform: translateX(10px);
+        }
+        /* Projects Section with card flips or enhanced hover */
+        #projects {
+            background: var(--white);
+        }
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+        .project-card {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid #e2e8f0;
+            perspective: 1000px;
+            opacity: 0;
+            animation: projectCardAnim 1s ease forwards;
+            animation-delay: calc(0.2s * var(--order));
+        }
+        @keyframes projectCardAnim {
+            from { opacity: 0; transform: translateY(50px) rotateY(30deg); }
+            to { opacity: 1; transform: translateY(0) rotateY(0); }
+        }
+        .project-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.2);
+            border-color: var(--primary);
+        }
+        .project-card:focus-within {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+        .project-header {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(251, 191, 36, 0.1));
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .project-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .project-tag {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .project-icon {
+            font-size: 2.5rem;
+            animation: iconBounce 1s ease infinite alternate;
+        }
+        @keyframes iconBounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+        .project-card h3 {
+            font-size: 1.75rem;
+            color: var(--dark);
             margin-bottom: 0.75rem;
         }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .project-body {
+            padding: 2rem;
         }
-
-        .footer-links a:hover {
+        .project-section {
+            margin-bottom: 2rem;
+        }
+        .project-section:last-child {
+            margin-bottom: 0;
+        }
+        .project-section h4 {
+            font-size: 0.9rem;
             color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
         }
-
+        .project-section p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .project-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .project-section li {
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .project-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-tag {
+            background: var(--white);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+            transition: all 0.3s;
+        }
+        .tech-tag:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        /* Contact Section */
+        #contact {
+            background: var(--light);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            opacity: 0;
+            animation: contactAnim 1s ease forwards;
+        }
+        @keyframes contactAnim {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .contact-card:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 50px rgba(16, 185, 129, 0.2);
+        }
+        .contact-card:focus-within {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: var(--light);
+        }
+        .contact-item:hover {
+            background: rgba(16, 185, 129, 0.1);
+            transform: translateX(5px) scale(1.05);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+        }
+        .contact-item:focus-within {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.125rem;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+            animation: iconPulse 1.5s ease infinite;
+        }
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .contact-item a, .contact-item span {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
         }
-
         .social-link {
             width: 45px;
             height: 45px;
@@ -869,33 +822,78 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
         .social-link:hover {
             background: var(--primary);
             color: var(--white);
-            transform: translateY(-5px);
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 0 15px var(--primary);
         }
-
+        .social-link:focus {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            animation: footerGlow 2s ease infinite alternate;
+        }
+        @keyframes footerGlow {
+            from { text-shadow: 0 0 5px var(--primary); }
+            to { text-shadow: 0 0 10px var(--primary); }
+        }
+        .footer-section p {
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 5px var(--primary);
+        }
+        .footer-links a:focus {
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
+        }
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #94a3b8;
         }
-
-        /* ===== ANIMATIONS ===== */
+        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ===== RESPONSIVE ===== */
+        /* Responsive */
         @media (max-width: 968px) {
             .nav-menu {
                 position: fixed;
@@ -909,76 +907,56 @@
                 transition: left 0.3s ease;
                 align-items: flex-start;
             }
-
             .nav-menu.active {
                 left: 0;
             }
-
             .mobile-toggle {
                 display: flex;
             }
-
             .mobile-toggle.active span:nth-child(1) {
                 transform: rotate(45deg) translate(8px, 8px);
             }
-
             .mobile-toggle.active span:nth-child(2) {
                 opacity: 0;
             }
-
             .mobile-toggle.active span:nth-child(3) {
                 transform: rotate(-45deg) translate(7px, -7px);
             }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-card {
-                position: static;
-            }
-
             .timeline::before {
                 left: 20px;
             }
-
             .timeline-content {
                 width: calc(100% - 50px);
                 margin-left: 50px !important;
             }
-
             .timeline-item:nth-child(odd) .timeline-content::before,
             .timeline-item:nth-child(even) .timeline-content::before {
                 left: -35px;
             }
-
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
-
         @media (max-width: 640px) {
             .hero-stats {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-
             .hero-cta {
                 flex-direction: column;
                 align-items: stretch;
             }
-
             .btn {
                 justify-content: center;
             }
-
             .skills-grid {
                 grid-template-columns: 1fr;
             }
         }
-
         /* Performance: Reduce animations on slow devices */
         @media (prefers-reduced-motion: reduce) {
             * {
@@ -990,46 +968,44 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <a href="#home" class="logo">Sujit<span>.</span></a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link nav-cta">Contact Me</a></li>
+                <li><a href="#experience" class="nav-link">Experience & Education</a></li>
+                <li><a href="#skills" class="nav-link">Technical Skills</a></li>
+                <li><a href="#projects" class="nav-link">Featured Projects</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Let's Connect</a></li>
             </ul>
-            <div class="mobile-toggle" id="mobileToggle">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Hero Section with Bio -->
+    <section id="home" class="hero" role="banner">
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
-        <div class="hero-content">
+        <div class="hero-content" id="main-content" tabindex="-1">
             <div class="hero-badge">Available for Projects</div>
-            <h1>Building Scalable <span class="highlight">Backend Solutions</span> with Python & Django</h1>
-            <p class="subtitle">Transforming complex problems into elegant code. Specialized in Django development, API design, and data-driven applications.</p>
-            
+            <h1>Crafting Scalable Backends, Data Insights, SEO & Digital Marketing Strategies with <span class="highlight">Python, Django & Analytics</span></h1>
+            <p class="subtitle">Versatile IT professional with hands-on experience in backend Python/Django development, SEO and digital marketing, and data analytics. Skilled in building scalable web applications, optimizing online platforms for visibility and user experience, and using analytics to drive data-informed decisions. Seeking to contribute to an innovative and growth-oriented organization where I can apply both technical and analytical skills to deliver impactful solutions.</p>
+           
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">
+                <a href="#projects" class="btn btn-primary" aria-label="View my work">
                     View My Work
                     <span>→</span>
                 </a>
-                <a href="#contact" class="btn btn-secondary">
+                <a href="#contact" class="btn btn-secondary" aria-label="Get in touch">
                     Get In Touch
                     <span>✉</span>
                 </a>
             </div>
-
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">3+</span>
@@ -1046,416 +1022,263 @@
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about">
+    <!-- Experience & Education Section -->
+    <section id="experience" role="region" aria-labelledby="experience-title">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-tag">About Me</span>
-                <h2 class="section-title">Backend Developer & Data Analyst</h2>
-                <p class="section-description">Passionate about building robust systems that solve real-world problems</p>
+                <span class="section-tag">Career Journey</span>
+                <h2 class="section-title" id="experience-title">Work Experience & Education</h2>
+                <p class="section-description">Building expertise through diverse roles and challenges</p>
             </div>
-
-            <div class="about-grid">
-                <div class="about-content fade-in">
-                    <h3>Hi, I'm Sujit Bhattarai</h3>
-                    <p>I'm a Python Developer and Data Analyst based in Kathmandu, Nepal, with expertise in building scalable web applications using Django. I combine strong analytical thinking with clean code practices to create solutions that drive business value.</p>
-                    
-                    <p>Currently serving as IT Officer at Fishtail Tours and Travels, where I lead web development initiatives, optimize SEO strategies, and manage technical infrastructure. My journey includes hands-on experience in backend development, data analysis, and building complex business systems.</p>
-
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">🎯</div>
-                            <div>
-                                <strong>Problem Solver</strong>
-                                <p style="color: var(--text-light); margin-top: 0.25rem;">I break down complex challenges into elegant, maintainable solutions</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">📊</div>
-                            <div>
-                                <strong>Data-Driven</strong>
-                                <p style="color: var(--text-light); margin-top: 0.25rem;">Extract insights from data to inform better business decisions</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">⚡</div>
-                            <div>
-                                <strong>Fast Learner</strong>
-                                <p style="color: var(--text-light); margin-top: 0.25rem;">Quickly adapt to new technologies and development patterns</p>
-                            </div>
-                        </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in" style="--order: 1;">
+                    <div class="timeline-content">
+                        <span class="timeline-badge">Current</span>
+                        <h3>IT & Digital Marketing Head</h3>
+                        <div class="company">Fishtail Tours and Travels</div>
+                        <div class="date">Sep 2025 - Present | Kathmandu</div>
+                        <p>Lead IT and digital marketing operations for all companies under the Fishtail Group. Manage and maintain multiple company websites to ensure optimal performance, security, and updated content. Plan and execute SEO strategies to improve online visibility and search engine rankings. Run and optimize Meta (Facebook/Instagram) advertising campaigns to increase brand reach and customer engagement. Execute email marketing campaigns to support promotions, customer communication, and lead generation. Provide hardware and software troubleshooting and technical support across departments. Support digital system improvements to streamline workflows and enhance operational efficiency.</p>
                     </div>
                 </div>
-
-                <div class="contact-card fade-in" id="contact">
-                    <h3>Let's Connect</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">✉</div>
-                        <a href="mailto:bhattaraisujit79@gmail.com">bhattaraisujit79@gmail.com</a>
+                <div class="timeline-item fade-in" style="--order: 2;">
+                    <div class="timeline-content">
+                        <span class="timeline-badge">Full-time</span>
+                        <h3>Backend Developer</h3>
+                        <div class="company">Swoyef Labs Private Limited</div>
+                        <div class="date">Jun 2025 - Sep 2025 | Pokhara</div>
+                        <p>Developed and enhanced backend features for Django-based web applications using modern development best practices. Contributed to the backend architecture of an AI-powered Django application (Fiscal AI), implementing core functionalities that improved system performance and usability. Built custom admin panels and analytical dashboards using Django Admin for efficient data management. Integrated databases and optimized backend workflows to support scalable application growth. Worked closely with cross-functional teams to translate requirements into reliable technical solutions.</p>
                     </div>
-                    <!-- <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <!-- <a href="tel:+9779805821214">+977 980-5821214</a> -->
-                    </div> -->
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <span>Kathmandu, Nepal</span>
+                </div>
+                <div class="timeline-item fade-in" style="--order: 3;">
+                    <div class="timeline-content">
+                        <span class="timeline-badge">Internship</span>
+                        <h3>Backend Developer Intern</h3>
+                        <div class="company">XTen IT Private Limited</div>
+                        <div class="date">Mar 2025 - May 2025 | Pokhara</div>
+                        <p>Designed and implemented scalable backend components using Django, focusing on clean architecture and efficient server-side logic. Contributed to the development of AccoX, a Django Ledger–based multi-entity e-commerce and accounting platform, implementing invoice automation and scalable financial workflow management. Optimized database queries and backend performance to improve system responsiveness and reliability. Collaborated in an agile team environment to deliver production-ready backend features and enhancements. Identified and resolved technical issues through systematic debugging and performance tuning.</p>
                     </div>
-                    <div class="social-links" style="margin-top: 2rem;">
-                        <!-- <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener">🔗</a> -->
-                        <!-- <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank" rel="noopener">💼</a> -->
+                </div>
+                <div class="timeline-item fade-in" style="--order: 4;">
+                    <div class="timeline-content">
+                        <span class="timeline-badge">Education</span>
+                        <h3>BSc.CSIT</h3>
+                        <div class="company">Soch College of IT</div>
+                        <div class="date">Completed 2024 | Pokhara</div>
+                        <p>Bachelor of Science in Computer Science and Information Technology with focus on software development and data structures.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" style="--order: 5;">
+                    <div class="timeline-content">
+                        <span class="timeline-badge">Education</span>
+                        <h3>Higher Secondary (+2)</h3>
+                        <div class="company">Srijana Secondary School</div>
+                        <div class="date">Completed 2020 | Pokhara</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" style="--order: 6;">
+                    <div class="timeline-content">
+                        <span class="timeline-badge">Education</span>
+                        <h3>Secondary Education</h3>
+                        <div class="company">Jeev Juna Secondary School</div>
+                        <div class="date">Completed 2018 | Tanahun</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- Technical Skills Section -->
+    <section id="skills" role="region" aria-labelledby="skills-title">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Expertise</span>
+                <h2 class="section-title" id="skills-title">Technical Skills</h2>
+                <p class="section-description">Technologies and tools I use to build exceptional solutions</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card fade-in" style="--order: 1;">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>Strong proficiency in Python and Django (Django REST Framework, Django Ledger) for backend web application development.</li>
+                        <li>Knowledge of SEO and digital marketing, focused on improving website visibility and performance.</li>
+                        <li>Ability to develop clean, efficient, and well-documented code with strong problem-solving skills.</li>
+                    </ul>
+                </div>
+                <div class="skill-card fade-in" style="--order: 2;">
+                    <div class="skill-icon">📊</div>
+                    <h3>Data Analysis</h3>
+                    <ul>
+                        <li>Experience in data analytics, including data analysis, visualization, and using insights to support decision-making.</li>
+                    </ul>
+                </div>
+                <div class="skill-card fade-in" style="--order: 3;">
+                    <div class="skill-icon">💾</div>
+                    <h3>Database Management</h3>
+                    <ul>
+                        <li>Hands-on experience with databases and development tools including PostgreSQL, SQLite, and Git version control.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Projects Section -->
+    <section id="projects" role="region" aria-labelledby="projects-title">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title" id="projects-title">Featured Projects</h2>
                 <p class="section-description">Real-world solutions built with Python, Django, and data analysis</p>
             </div>
-
             <div class="projects-grid">
-                <!-- Project 1: Admin Panel -->
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-meta">
-                            <span class="project-tag">Backend Development</span>
-                            <span class="project-icon">🔐</span>
-                        </div>
-                        <h3>Astrologer Admin Panel</h3>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-section">
-                            <h4>Problem</h4>
-                            <p>Astrologers needed a centralized system to manage horoscopes, user consultations, and content without technical knowledge. Manual processes were time-consuming and error-prone.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Solution</h4>
-                            <ul>
-                                <li>Built a custom Django admin panel with intuitive interfaces</li>
-                                <li>Implemented post analytics dashboard with real-time metrics</li>
-                                <li>Created automated workflows for content publishing</li>
-                                <li>Designed role-based access control for multiple astrologers</li>
-                            </ul>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tech Stack</h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">Django</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">Django Admin</span>
-                                <span class="tech-tag">REST API</span>
-                            </div>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>Reduced content management time by 70%, enabled data-driven decisions through analytics, and improved overall operational efficiency for the client.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: E-commerce System -->
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-meta">
-                            <span class="project-tag">Full Stack</span>
-                            <span class="project-icon">🛒</span>
-                        </div>
-                        <h3>Multi-Entity E-commerce & Accounting System</h3>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-section">
-                            <h4>Problem</h4>
-                            <p>Client needed an integrated platform combining e-commerce functionality with comprehensive accounting features to track multiple vendors, customers, and financial transactions.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Solution</h4>
-                            <ul>
-                                <li>Developed multi-vendor e-commerce platform with Django</li>
-                                <li>Integrated Django Ledger for double-entry bookkeeping</li>
-                                <li>Automated invoice generation and financial reporting</li>
-                                <li>Built vendor/customer relationship management system</li>
-                            </ul>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tech Stack</h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">Django</span>
-                                <span class="tech-tag">Django Ledger</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>Successfully consolidated e-commerce and accounting into a single platform, reducing manual data entry by 80% and providing real-time financial visibility.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Customer Segmentation -->
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-meta">
-                            <span class="project-tag">Data Science</span>
-                            <span class="project-icon">📊</span>
-                        </div>
-                        <h3>Customer Segmentation Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-section">
-                            <h4>Problem</h4>
-                            <p>Marketing team needed to understand customer behavior patterns to create targeted campaigns but lacked data-driven insights into customer segments.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Solution</h4>
-                            <ul>
-                                <li>Analyzed purchasing patterns using Python and Pandas</li>
-                                <li>Applied K-means clustering to segment customers</li>
-                                <li>Created visualization dashboards for insights</li>
-                                <li>Generated actionable recommendations for marketing</li>
-                            </ul>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tech Stack</h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Pandas</span>
-                                <span class="tech-tag">scikit-learn</span>
-                                <span class="tech-tag">Matplotlib</span>
-                            </div>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>Identified 5 distinct customer segments, enabling 35% improvement in marketing campaign conversion rates and more personalized customer experiences.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: COVID-19 Analysis -->
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-meta">
-                            <span class="project-tag">Data Analytics</span>
-                            <span class="project-icon">🦠</span>
-                        </div>
-                        <h3>COVID-19 Data Analysis Dashboard</h3>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-section">
-                            <h4>Problem</h4>
-                            <p>Public health officials needed clear visualizations of COVID-19 trends to make informed decisions, but raw data was difficult to interpret.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Solution</h4>
-                            <ul>
-                                <li>Cleaned and processed large-scale epidemiological datasets</li>
-                                <li>Built interactive visualizations showing trends over time</li>
-                                <li>Performed statistical analysis to identify correlations</li>
-                                <li>Created automated reporting system</li>
-                            </ul>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tech Stack</h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">NumPy</span>
-                                <span class="tech-tag">Plotly</span>
-                                <span class="tech-tag">Statistics</span>
-                            </div>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>Provided actionable insights that helped stakeholders understand pandemic trends and make data-informed public health decisions.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: License Plate Detection -->
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" style="--order: 1;">
                     <div class="project-header">
                         <div class="project-meta">
                             <span class="project-tag">Computer Vision</span>
                             <span class="project-icon">🚗</span>
                         </div>
-                        <h3>Automated License Plate Recognition</h3>
+                        <h3>License Plate Detection System</h3>
                     </div>
                     <div class="project-body">
                         <div class="project-section">
-                            <h4>Problem</h4>
-                            <p>Manual vehicle identification was time-consuming for parking management. An automated system was needed to process vehicles efficiently.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Solution</h4>
-                            <ul>
-                                <li>Developed image processing pipeline using OpenCV</li>
-                                <li>Implemented edge detection and character recognition</li>
-                                <li>Built OCR system for plate number extraction</li>
-                                <li>Created real-time processing capability</li>
-                            </ul>
+                            <h4>Description</h4>
+                            <p>Developed a license plate detection system using OpenCV and OCR. Implemented image processing techniques for recognizing vehicle license plates and extracting numbers.</p>
                         </div>
                         <div class="project-section">
                             <h4>Tech Stack</h4>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">OpenCV</span>
-                                <span class="tech-tag">Tesseract OCR</span>
-                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">OCR</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in" style="--order: 2;">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">Full Stack</span>
+                            <span class="project-icon">🌐</span>
+                        </div>
+                        <h3>Laravel Web Application</h3>
+                    </div>
+                    <div class="project-body">
                         <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>Achieved 92% accuracy in license plate detection, reducing manual processing time by 85% and enabling automated parking management.</p>
+                            <h4>Description</h4>
+                            <p>Built a web application using the Laravel framework, featuring user authentication, database management, and a responsive design.</p>
+                        </div>
+                        <div class="project-section">
+                            <h4>Tech Stack</h4>
+                            <div class="project-tech">
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in" style="--order: 3;">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">Data Analytics</span>
+                            <span class="project-icon">📈</span>
+                        </div>
+                        <h3>Website Traffic Analytics Dashboard</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-section">
+                            <h4>Description</h4>
+                            <p>Analyzed website traffic data and created dashboards to visualize performance trends. Generated insights to support data-driven optimization strategies.</p>
+                        </div>
+                        <div class="project-section">
+                            <h4>Tech Stack</h4>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in" style="--order: 4;">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">Data Analytics</span>
+                            <span class="project-icon">📊</span>
+                        </div>
+                        <h3>Sales Data Analysis Project</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-section">
+                            <h4>Description</h4>
+                            <p>Conducted exploratory data analysis on sales datasets to identify trends and performance metrics. Used visualization techniques to communicate insights effectively.</p>
+                        </div>
+                        <div class="project-section">
+                            <h4>Tech Stack</h4>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
+    <!-- Let's Connect Section -->
+    <section id="contact" role="region" aria-labelledby="contact-title">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-tag">Expertise</span>
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-description">Technologies and tools I use to build exceptional solutions</p>
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title" id="contact-title">Let's Connect</h2>
+                <p class="section-description">Reach out for collaborations, opportunities, or just to chat about tech!</p>
             </div>
-
-            <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🐍</div>
-                    <h3>Backend Development</h3>
-                    <ul>
-                        <li>Python & Django Framework</li>
-                        <li>Django REST Framework</li>
-                        <li>Django Ledger</li>
-                        <li>RESTful API Design</li>
-                        <li>Authentication & Security</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">📊</div>
-                    <h3>Data Analysis</h3>
-                    <ul>
-                        <li>Pandas & NumPy</li>
-                        <li>Data Visualization</li>
-                        <li>Statistical Analysis</li>
-                        <li>Machine Learning Basics</li>
-                        <li>K-means Clustering</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">💾</div>
-                    <h3>Database Management</h3>
-                    <ul>
-                        <li>PostgreSQL</li>
-                        <li>SQLite</li>
-                        <li>Database Design</li>
-                        <li>Query Optimization</li>
-                        <li>Data Modeling</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Frontend & Tools</h3>
-                    <ul>
-                        <li>HTML5 & CSS3</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>Git Version Control</li>
-                        <li>Linux/Unix</li>
-                        <li>SEO Optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">Career Journey</span>
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-description">Building expertise through diverse roles and challenges</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-badge">Current</span>
-                        <h3>IT Officer</h3>
-                        <div class="company">Fishtail Tours and Travels</div>
-                        <div class="date">September 2025 - Present | Kathmandu</div>
-                        <p>Leading digital transformation initiatives, managing company website, implementing SEO strategies, and providing comprehensive technical support for hardware and software systems.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉</div>
+                        <a href="mailto:bhattaraisujit79@gmail.com">bhattaraisujit79@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <a href="tel:+9779805821214">+977 980-5821214</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <span>Pokhara, Nepal</span>
                     </div>
                 </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-badge">Full-time</span>
-                        <h3>Backend Developer</h3>
-                        <div class="company">Swoyef Labs</div>
-                        <div class="date">May 2025 - August 2025 | Pokhara</div>
-                        <p>Architected Django-based admin panel for astrologers with custom dashboards, analytics, and content management features.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-badge">Internship</span>
-                        <h3>Backend Developer Intern</h3>
-                        <div class="company">Xten IT Pvt. Ltd.</div>
-                        <div class="date">March 2025 - May 2025 | Pokhara</div>
-                        <p>Developed multi-entity e-commerce system with integrated accounting using Django and Django Ledger.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-badge">Education</span>
-                        <h3>BSc.CSIT</h3>
-                        <div class="company">Soch College of IT</div>
-                        <div class="date">Completed 2082 | Pokhara</div>
-                        <p>Bachelor of Science in Computer Science and Information Technology with focus on software development and data structures.</p>
+                <div class="contact-card">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sujit-bhattarai-ab6ba62ba/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn Profile">💼</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Sujit Bhattarai</h3>
-                    <p>Python Developer & Data Analyst based in Kathmandu, Nepal. Passionate about building scalable backend solutions and extracting insights from data.</p>
+                    <p>Python Developer & Data Analyst based in Pokhara, Nepal. Passionate about building scalable backend solutions and extracting insights from data.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <ul class="footer-links">
                         <li><a href="mailto:bhattaraisujit79@gmail.com">Email</a></li>
-                        <!-- <li><a href="tel:+9779805821214">Phone</a></li> -->
-                        <!-- <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li> -->
+                        <li><a href="tel:+9779805821214">Phone</a></li>
                         <li><a href="https://www.linkedin.com/in/sujit-bhattarai-ab6ba62ba/" target="_blank" rel="noopener">LinkedIn</a></li>
                     </ul>
                 </div>
@@ -1465,25 +1288,24 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
-
         mobileToggle.addEventListener('click', () => {
+            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
             navMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', !expanded);
         });
-
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
-
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1493,7 +1315,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1504,16 +1325,15 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    target.focus({ preventScroll: true });
                 }
             });
         });
-
         // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1521,14 +1341,11 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-in').forEach(element => {
             observer.observe(element);
         });
-
         // Performance: Preload critical resources
         window.addEventListener('load', () => {
-            // Add any post-load optimizations here
             console.log('Portfolio loaded successfully!');
         });
     </script>
