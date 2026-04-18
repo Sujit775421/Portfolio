@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sujit775421.github.io/Portfolio/sitemap.xml
+Sitemap: https://www.bhattaraisujit.com.np/sitemap.xml
