@@ -3,422 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sujit Bhattarai</title>
+
+<title>Sujit Bhattarai | Django Developer, Digital Marketing & Data Analyst Nepal</title>
+
+<meta name="description" content="Sujit Bhattarai is a Django developer, digital marketing specialist, and data analyst based in Nepal. Expert in SEO, backend systems, and analytics-driven growth.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#0a0a0a;
-  --bg2:#111111;
-  --bg3:#1a1a1a;
-  --border:#222222;
-  --border-light:#2a2a2a;
-  --gold:#c9a84c;
-  --gold-dim:#8a6f2e;
-  --gold-pale:rgba(201,168,76,0.08);
-  --gold-pale2:rgba(201,168,76,0.04);
-  --text:#f0ece4;
-  --text2:#a89880;
-  --text3:#5a5248;
-  --white:#faf8f4;
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f5f2ea}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
+section.show{opacity:1;transform:translateY(0)}
+
 .serif{font-family:'Cormorant Garamond',serif}
+h1{font-size:60px}
+h2{font-size:32px;margin-bottom:20px}
+h3{font-size:18px;color:#c9a84c}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;letter-spacing:0.12em;color:var(--gold)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:0.72rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--text2);transition:color 0.3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:0.5rem 1.4rem;border-radius:2px;transition:opacity 0.2s}
-.nav-cta:hover{opacity:0.85}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-/* HERO */
-.hero{min-height:92vh;max-width:1100px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;position:relative}
-.hero-line{position:absolute;left:3rem;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--border-light) 20%,var(--border-light) 80%,transparent)}
-.hero-content{padding-left:3rem;max-width:700px}
-.hero-eyebrow{font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
-.hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--gold)}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:0.5rem;letter-spacing:0.02em}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:300;color:var(--text2);margin-bottom:2.5rem;font-style:italic;letter-spacing:0.04em}
-.hero-bio{font-size:0.85rem;color:var(--text2);line-height:1.9;max-width:480px;margin-bottom:3rem;font-weight:300}
-.hero-divider{width:40px;height:1px;background:var(--gold);margin-bottom:3rem}
-.hero-btns{display:flex;gap:1.25rem;align-items:center;margin-bottom:4rem}
-.btn-gold{background:var(--gold);color:#0a0a0a;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:opacity 0.2s}
-.btn-gold:hover{opacity:0.85}
-.btn-ghost{font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--text2);border:1px solid var(--border-light);padding:0.85rem 2rem;border-radius:2px;transition:border-color 0.3s,color 0.3s}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:3.5rem}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold);display:block;line-height:1}
-.stat-lbl{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);display:block;margin-top:4px}
+.card{
+background:#111;
+padding:25px;
+border:1px solid #1f1f1f;
+transition:.3s;
+}
+.card:hover{transform:translateY(-5px);border-color:#c9a84c}
 
-/* SECTION WRAPPER */
-.sec{max-width:1100px;margin:0 auto;padding:5rem 3rem;border-top:1px solid var(--border)}
-.sec-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3.5rem}
-.sec-num{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--text3);letter-spacing:0.1em}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:var(--white);letter-spacing:0.04em}
-.sec-title em{color:var(--gold);font-style:italic}
+.small{
+color:#c9a84c;
+font-size:12px;
+letter-spacing:2px;
+margin-bottom:10px;
+}
 
-/* SERVICES */
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border)}
-.svc-card{background:var(--bg);padding:2rem 1.75rem;transition:background 0.3s}
-.svc-card:hover{background:var(--gold-pale2)}
-.svc-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--text3);margin-bottom:1.25rem;display:block}
-.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--white);margin-bottom:0.75rem;letter-spacing:0.03em}
-.svc-card p{font-size:0.8rem;color:var(--text2);line-height:1.8;font-weight:300}
+.timeline{border-left:1px solid #222;padding-left:20px}
+.timeline-item{margin-bottom:30px}
+.date{font-size:12px;color:#aaa;margin-bottom:5px}
 
-/* EXPERIENCE */
-.exp-grid{display:grid;gap:0}
-.exp-row{display:grid;grid-template-columns:160px 1fr;gap:3rem;padding:2rem 0;border-bottom:1px solid var(--border);align-items:start}
-.exp-row:first-child{border-top:1px solid var(--border)}
-.exp-date{font-size:0.72rem;letter-spacing:0.1em;color:var(--text3);text-transform:uppercase;padding-top:3px}
-.exp-active{color:var(--gold)}
-.exp-main{}
-.exp-badge{display:inline-block;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:0.15rem 0.6rem;border-radius:1px;margin-bottom:0.6rem}
-.exp-badge-edu{color:var(--text3);border-color:var(--border-light)}
-.exp-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--white);margin-bottom:0.2rem}
-.exp-co{font-size:0.78rem;color:var(--gold);letter-spacing:0.05em;margin-bottom:0.6rem;font-weight:400}
-.exp-co-edu{color:var(--text3)}
-.exp-desc{font-size:0.8rem;color:var(--text2);line-height:1.85;font-weight:300}
-
-/* SKILLS */
-.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.skill-group{}
-.skill-group-title{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border)}
-.skill-items{display:flex;flex-direction:column;gap:0}
-.skill-item{font-size:0.82rem;color:var(--text2);padding:0.55rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.75rem;font-weight:300;transition:color 0.2s}
-.skill-item:last-child{border-bottom:none}
-.skill-item:hover{color:var(--gold)}
-.skill-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:0.5}
-
-/* PROJECTS */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border)}
-.proj-card{background:var(--bg);padding:2rem 1.75rem;transition:background 0.3s}
-.proj-card:hover{background:var(--gold-pale2)}
-.proj-type{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
-.proj-card h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--white);margin-bottom:0.75rem}
-.proj-card p{font-size:0.78rem;color:var(--text2);line-height:1.8;margin-bottom:1.1rem;font-weight:300}
-.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
-.proj-tag{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);border:1px solid var(--border-light);padding:0.2rem 0.6rem;border-radius:1px}
-
-/* CONTACT */
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.contact-text h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:1.25rem}
-.contact-text h2 em{color:var(--gold);font-style:italic}
-.contact-text p{font-size:0.83rem;color:var(--text2);line-height:1.9;margin-bottom:2rem;font-weight:300}
-.contact-text a{display:inline-block;background:var(--gold);color:#0a0a0a;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px}
-.contact-text a:hover{opacity:0.85}
-.contact-links{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}
-.c-link{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-bottom:1px solid var(--border);transition:padding-left 0.3s}
-.c-link:hover{padding-left:8px}
-.c-link-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text3)}
-.c-link-val{font-size:0.83rem;color:var(--gold);font-weight:300}
-.c-link-arrow{font-size:0.75rem;color:var(--text3)}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:2rem 3rem}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.12em;color:var(--gold)}
-footer p{font-size:0.68rem;letter-spacing:0.1em;color:var(--text3)}
-.footer-links{display:flex;gap:2rem}
-.footer-links a{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);transition:color 0.2s}
-.footer-links a:hover{color:var(--gold)}
-
-@media(max-width:768px){
-  .nav-inner{padding:0 1.5rem}
-  .nav-links{display:none}
-  .hero{padding:0 1.5rem;min-height:auto;padding-top:4rem;padding-bottom:4rem}
-  .hero-line{display:none}
-  .hero-content{padding-left:0}
-  .hero-stats{gap:2rem}
-  .sec{padding:3.5rem 1.5rem}
-  .exp-row{grid-template-columns:1fr;gap:0.5rem}
-  .skills-layout{grid-template-columns:1fr}
-  .contact-layout{grid-template-columns:1fr;gap:3rem}
-  footer{padding:2rem 1.5rem}
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:#c9a84c;
+color:#000;
+text-decoration:none;
+margin-top:20px;
 }
 </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">S · B</div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Hire Me</a>
-  </div>
-</nav>
+<!-- HERO -->
+<section class="show">
+<h1 class="serif">Sujit <span style="color:#c9a84c">Bhattarai</span></h1>
 
-<div class="hero">
-  <div class="hero-line"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Available for Work &mdash; Nepal</div>
-    <h1 class="serif">Sujit<br><em>Bhattarai</em></h1>
-    <div class="hero-sub serif">Developer. Analyst. Marketer.</div>
-    <div class="hero-divider"></div>
-    <p class="hero-bio">A versatile IT professional who builds scalable Django backends, grows brands through precision digital marketing, and transforms raw data into strategic insights. Based in Nepal, working globally.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-gold">View Work</a>
-      <a href="#contact" class="btn-ghost">Get in Touch</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num serif">3+</span><span class="stat-lbl">Years</span></div>
-      <div class="stat"><span class="stat-num serif">15+</span><span class="stat-lbl">Projects</span></div>
-      <div class="stat"><span class="stat-num serif">4</span><span class="stat-lbl">Companies</span></div>
-    </div>
-  </div>
+<p>
+Sujit Bhattarai is a Nepal-based Django developer, digital marketing specialist, and data analyst who builds scalable backend systems, drives SEO growth, and transforms data into actionable business insights.
+</p>
+
+<a href="#contact" class="btn">Hire Me</a>
+</section>
+
+<!-- SERVICES -->
+<section>
+<div class="small">SERVICES</div>
+<h2 class="serif">What I Offer</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Django Backend Development</h3>
+<p>Designing scalable web applications, APIs, and admin systems using Django and Python.</p>
 </div>
 
-<div class="sec" id="services">
-  <div class="sec-head">
-    <span class="sec-num">01</span>
-    <span class="sec-title serif">What I <em>Offer</em></span>
-  </div>
-  <div class="svc-grid">
-    <div class="svc-card">
-      <span class="svc-num serif">I</span>
-      <h3>Backend Development</h3>
-      <p>Scalable Django and Python applications, REST APIs, admin dashboards, and database-driven systems engineered for performance and longevity.</p>
-    </div>
-    <div class="svc-card">
-      <span class="svc-num serif">II</span>
-      <h3>SEO &amp; Digital Marketing</h3>
-      <p>Strategic on-page and off-page SEO, Meta ad campaigns, email marketing, and data-driven growth strategies that move the needle.</p>
-    </div>
-    <div class="svc-card">
-      <span class="svc-num serif">III</span>
-      <h3>Data Analysis</h3>
-      <p>Exploratory data analysis, performance dashboards, and actionable insights crafted with Python, Pandas, and Matplotlib.</p>
-    </div>
-    <div class="svc-card">
-      <span class="svc-num serif">IV</span>
-      <h3>IT Management</h3>
-      <p>Website maintenance, performance monitoring, technical troubleshooting, and digital workflow optimization across departments.</p>
-    </div>
-  </div>
+<div class="card">
+<h3>SEO & Digital Marketing</h3>
+<p>Improving website visibility, running Meta & Google Ads, and increasing organic traffic.</p>
 </div>
 
-<div class="sec" id="experience">
-  <div class="sec-head">
-    <span class="sec-num">02</span>
-    <span class="sec-title serif">Experience &amp; <em>Education</em></span>
-  </div>
-  <div class="exp-grid">
-
-    <div class="exp-row">
-      <div class="exp-date exp-active">Mar 2026 &mdash; Present</div>
-      <div class="exp-main">
-        <span class="exp-badge">Current</span>
-        <div class="exp-title serif">Digital Marketing Specialist</div>
-        <div class="exp-co">Hotstone Innovation</div>
-        <p class="exp-desc">Driving online growth through strategic digital campaigns, SEO optimization, and data-driven marketing initiatives.</p>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-date">Sep 2025 &mdash; Feb 2026</div>
-      <div class="exp-main">
-        <span class="exp-badge">Current</span>
-        <div class="exp-title serif">IT &amp; Digital Marketing Head</div>
-        <div class="exp-co">Fishtail Tours and Travels &middot; Kathmandu</div>
-        <p class="exp-desc">Lead IT and digital marketing for the Fishtail Group. Manage websites, execute SEO strategies, run Meta ad campaigns, and deliver email marketing initiatives across departments.</p>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-date">Jun &mdash; Sep 2025</div>
-      <div class="exp-main">
-        <span class="exp-badge">Full-time</span>
-        <div class="exp-title serif">Backend Developer</div>
-        <div class="exp-co">Swoyef Labs Private Limited &middot; Pokhara</div>
-        <p class="exp-desc">Built backend features for Django web applications including Fiscal AI. Created custom admin panels, dashboards, and optimized database workflows for scalable growth.</p>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-date">Mar &mdash; May 2025</div>
-      <div class="exp-main">
-        <span class="exp-badge">Internship</span>
-        <div class="exp-title serif">Backend Developer Intern</div>
-        <div class="exp-co">XTen IT Private Limited &middot; Pokhara</div>
-        <p class="exp-desc">Contributed to AccoX, a Django Ledger–based accounting platform. Implemented invoice automation and optimized backend performance in an agile team.</p>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-date">Completed 2024</div>
-      <div class="exp-main">
-        <span class="exp-badge exp-badge-edu">Education</span>
-        <div class="exp-title serif">BSc. CSIT</div>
-        <div class="exp-co exp-co-edu">Soch College of IT &middot; Pokhara</div>
-        <p class="exp-desc">Bachelor of Science in Computer Science and Information Technology, focused on software development and data structures.</p>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-date">Completed 2020</div>
-      <div class="exp-main">
-        <span class="exp-badge exp-badge-edu">Education</span>
-        <div class="exp-title serif">Higher Secondary (+2)</div>
-        <div class="exp-co exp-co-edu">Srijana Secondary School &middot; Pokhara</div>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div class="exp-date">Completed 2018</div>
-      <div class="exp-main">
-        <span class="exp-badge exp-badge-edu">Education</span>
-        <div class="exp-title serif">Secondary Education</div>
-        <div class="exp-co exp-co-edu">Jeev Juna Secondary School &middot; Tanahun</div>
-      </div>
-    </div>
-
-  </div>
+<div class="card">
+<h3>Data Analysis</h3>
+<p>Analyzing data using Python, Pandas, and visualization tools to drive better decisions.</p>
 </div>
 
-<div class="sec" id="skills">
-  <div class="sec-head">
-    <span class="sec-num">03</span>
-    <span class="sec-title serif">Technical <em>Skills</em></span>
-  </div>
-  <div class="skills-layout">
-    <div class="skill-group">
-      <div class="skill-group-title">Backend Development</div>
-      <div class="skill-items">
-        <div class="skill-item">Python</div>
-        <div class="skill-item">Django &amp; Django REST Framework</div>
-        <div class="skill-item">Django Ledger</div>
-        <div class="skill-item">REST API Design</div>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Data Analysis</div>
-      <div class="skill-items">
-        <div class="skill-item">Pandas</div>
-        <div class="skill-item">Matplotlib</div>
-        <div class="skill-item">Data Visualization</div>
-        <div class="skill-item">Exploratory Analysis</div>
-      </div>
-    </div>
-    <div class="skill-group" style="margin-top:1.75rem">
-      <div class="skill-group-title">Digital Marketing &amp; SEO</div>
-      <div class="skill-items">
-        <div class="skill-item">Search Engine Optimization</div>
-        <div class="skill-item">Meta Ads (Facebook &amp; Instagram), Google Ads, TikTok Ads</div>
-        <div class="skill-item">Email Marketing</div>
-        <div class="skill-item">Google Analytics</div>
-      </div>
-    </div>
-    <div class="skill-group" style="margin-top:1.75rem">
-      <div class="skill-group-title">Databases &amp; Tools</div>
-      <div class="skill-items">
-        <div class="skill-item">PostgreSQL</div>
-        <div class="skill-item">SQLite &amp; MySQL</div>
-        <div class="skill-item">Git Version Control</div>
-        <div class="skill-item">Linux</div>
-      </div>
-    </div>
-  </div>
+<div class="card">
+<h3>System Optimization</h3>
+<p>Improving performance, fixing bottlenecks, and optimizing systems for speed and scalability.</p>
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+<div class="small">EXPERIENCE</div>
+<h2 class="serif">Professional Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="date">Mar 2026 — Present</div>
+<h3>Digital Marketing Specialist — Hotstone Innovation</h3>
+<p>Managing SEO, Meta Ads campaigns, and analytics. Focused on improving traffic, lowering CPC, and increasing conversion rates.</p>
 </div>
 
-<div class="sec" id="projects">
-  <div class="sec-head">
-    <span class="sec-num">04</span>
-    <span class="sec-title serif">Featured <em>Projects</em></span>
-  </div>
-  <div class="proj-grid">
-    <div class="proj-card">
-      <span class="proj-type">Computer Vision</span>
-      <h3>License Plate Detection System</h3>
-      <p>Real-time license plate recognition using OpenCV and OCR — detects and extracts vehicle plate numbers from images.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span><span class="proj-tag">OCR</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <span class="proj-type">Full Stack</span>
-      <h3>Laravel Web Application</h3>
-      <p>Full-featured web app with user authentication, database management, and responsive design.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <span class="proj-type">Data Analytics</span>
-      <h3>Traffic Analytics Dashboard</h3>
-      <p>Analyzed website traffic data and built dashboards to visualize performance trends and drive optimization.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Python</span><span class="proj-tag">Pandas</span><span class="proj-tag">Matplotlib</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <span class="proj-type">Data Analytics</span>
-      <h3>Sales Data Analysis</h3>
-      <p>Exploratory analysis on sales datasets surfacing trends and performance metrics for stakeholders.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Python</span><span class="proj-tag">Pandas</span><span class="proj-tag">Matplotlib</span>
-      </div>
-    </div>
-  </div>
+<div class="timeline-item">
+<div class="date">Sep 2025 — Feb 2026</div>
+<h3>IT & Digital Marketing Head — Fishtail Tours & Travels</h3>
+<p>Led IT operations and digital marketing strategies, handled websites, SEO, and advertising campaigns for tourism services.</p>
 </div>
 
-<div class="sec" id="contact">
-  <div class="sec-head">
-    <span class="sec-num">05</span>
-    <span class="sec-title serif">Let's <em>Connect</em></span>
-  </div>
-  <div class="contact-layout">
-    <div class="contact-text">
-      <h2 class="serif">Have a project<br>in <em>mind?</em></h2>
-      <p>I'm open to freelance projects, full-time roles, and meaningful collaborations in backend development, digital marketing, and data analytics. Let's build something great together.</p>
-      <a href="mailto:infosujit8@gmail.com">Send a Message</a>
-    </div>
-    <div class="contact-links">
-      <div class="c-link">
-        <span class="c-link-label">Email</span>
-        <span class="c-link-val">infosujit8@gmail.com</span>
-        <span class="c-link-arrow">&#8599;</span>
-      </div>
-      <div class="c-link">
-        <span class="c-link-label">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/sujit-bhattarai-ab6ba62ba/" target="_blank" rel="noopener" style="color:var(--gold);font-size:0.83rem;font-weight:300">sujit-bhattarai</a>
-        <span class="c-link-arrow">&#8599;</span>
-      </div>
-      <div class="c-link">
-        <span class="c-link-label">Location</span>
-        <span class="c-link-val">Kathmandu, Nepal</span>
-      </div>
-      <div class="c-link">
-        <span class="c-link-label">Availability</span>
-        <span class="c-link-val" style="color:var(--gold)">Open to Work</span>
-      </div>
-    </div>
-  </div>
+<div class="timeline-item">
+<div class="date">Jun 2025 — Sep 2025</div>
+<h3>Backend Developer — Swoyef Labs Pvt. Ltd.</h3>
+<p>Developed backend systems, dashboards, and APIs using Django. Improved database performance and scalability.</p>
 </div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">S · B</div>
-    <p>&copy; 2026 Sujit Bhattarai</p>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</footer>
+<div class="timeline-item">
+<div class="date">Mar 2025 — May 2025</div>
+<h3>Backend Developer Intern — XTen IT Pvt. Ltd.</h3>
+<p>Worked on Django Ledger-based accounting system (AccoX). Built backend features and optimized workflows.</p>
+</div>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section>
+<div class="small">EDUCATION</div>
+<h2 class="serif">Academic Background</h2>
+
+<div class="grid">
+<div class="card">
+<h3>BSc. CSIT</h3>
+<p>Soch College of IT, Pokhara — Completed 2024</p>
+</div>
+
+<div class="card">
+<h3>Higher Secondary (+2)</h3>
+<p>Srijana Secondary School — Completed 2020</p>
+</div>
+
+<div class="card">
+<h3>Secondary Education</h3>
+<p>Jeev Juna Secondary School — Completed 2018</p>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+<div class="small">PROJECTS</div>
+<h2 class="serif">Featured Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>License Plate Detection System</h3>
+<p>Built a real-time system using OpenCV and OCR to detect vehicle plate numbers for automation in parking/security.</p>
+</div>
+
+<div class="card">
+<h3>Traffic Analytics Dashboard</h3>
+<p>Created dashboards to analyze traffic data and improve digital marketing strategies.</p>
+</div>
+
+<div class="card">
+<h3>Sales Data Analysis</h3>
+<p>Performed data analysis to identify trends and improve business decision-making.</p>
+</div>
+
+<div class="card">
+<h3>Django Ledger System</h3>
+<p>Developed accounting and product management system using Django for business operations.</p>
+</div>
+
+<div class="card">
+<h3>Parking Management System</h3>
+<p>Built a Flutter-based system to manage parking slots, reservations, and payments.</p>
+</div>
+
+<div class="card">
+<h3>SEO Campaign Optimization</h3>
+<p>Worked on improving website rankings, keyword optimization, and traffic growth strategies.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="small">CONTACT</div>
+<h2 class="serif">Contact Sujit Bhattarai</h2>
+
+<p>Email: infosujit8@gmail.com</p>
+
+<a href="mailto:infosujit8@gmail.com" class="btn">Start a Project</a>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+sections.forEach(section=>observer.observe(section));
+</script>
 
 </body>
 </html>
