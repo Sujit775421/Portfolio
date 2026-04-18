@@ -1,241 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujit Bhattarai | Django Developer & Data Strategist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<title>Sujit Bhattarai | Django Developer, Digital Marketing & Data Analyst Nepal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top, #111, #070707 60%, #000);
+            color: #eae6dc;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+        /* NAVBAR - Corner Layout */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 0;
+        }
 
-<style>
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:radial-gradient(circle at top,#111,#070707 60%,#000);
-color:#eae6dc;
-line-height:1.7;
-scroll-behavior:smooth;
-}
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
 
-/* NAVBAR */
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:center;
-gap:30px;
-padding:15px 10px;
-z-index:1000;
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #c9a84c;
+            letter-spacing: 1px;
+        }
 
-nav a{
-color:#cfc7b8;
-text-decoration:none;
-font-size:13px;
-letter-spacing:1px;
-transition:.3s;
-}
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
 
-nav a:hover{
-color:#c9a84c;
-}
+        .nav-links a {
+            color: #cfc7b8;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: .3s;
+            text-transform: uppercase;
+        }
 
-/* SECTIONS */
-section{
-max-width:1100px;
-margin:auto;
-padding:120px 20px;
-opacity:0;
-transform:translateY(50px);
-transition:1s ease;
-}
+        .nav-links a:hover {
+            color: #c9a84c;
+        }
 
-section.show{opacity:1;transform:translateY(0)}
+        /* SECTIONS */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 140px 20px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+        }
 
-h1,h2,h3{margin:0}
-.serif{font-family:'Cormorant Garamond',serif}
+        section.show { opacity: 1; transform: translateY(0); }
 
-h1{font-size:72px;line-height:1.1}
-h2{font-size:38px;margin-bottom:15px}
-h3{font-size:20px;color:#c9a84c;margin-bottom:10px}
+        h1, h2, h3 { margin: 0; }
+        .serif { font-family: 'Cormorant Garamond', serif; }
 
-p{color:#cfc7b8;max-width:750px}
+        /* HERO ENHANCEMENTS */
+        #home {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.small{
-color:#c9a84c;
-letter-spacing:3px;
-font-size:12px;
-margin-bottom:12px;
-}
+        /* Ambient Glow behind Hero */
+        .hero-bg-accent {
+            position: absolute;
+            top: 30%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(60px);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
-margin-top:30px;
-}
+        h1 { font-size: 82px; line-height: 1; margin-bottom: 15px; }
+        
+        .hero-statement {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: #999;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
 
-.card{
-background:rgba(255,255,255,0.03);
-padding:28px;
-border:1px solid rgba(201,168,76,0.15);
-transition:.4s;
-backdrop-filter:blur(10px);
-}
+        p { color: #cfc7b8; max-width: 680px; font-size: 17px; }
 
-.card:hover{
-transform:translateY(-8px);
-border-color:#c9a84c;
-}
+        .small {
+            color: #c9a84c;
+            letter-spacing: 4px;
+            font-size: 11px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:#c9a84c;
-color:#000;
-text-decoration:none;
-font-weight:500;
-margin-top:25px;
-}
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
 
-.timeline{
-border-left:1px solid #222;
-padding-left:25px;
-margin-top:30px;
-}
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            background: #c9a84c;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: .4s;
+            border: 1px solid #c9a84c;
+        }
 
-.timeline-item{margin-bottom:35px}
+        .btn:hover {
+            background: transparent;
+            color: #c9a84c;
+            transform: translateY(-3px);
+        }
 
-.date{
-font-size:12px;
-color:#999;
-margin-bottom:5px;
-}
+        .btn-secondary {
+            background: transparent;
+            color: #eae6dc;
+            border-color: rgba(255,255,255,0.2);
+        }
 
-/* spacing for fixed navbar */
-body{padding-top:60px}
-</style>
+        .btn-secondary:hover {
+            border-color: #c9a84c;
+            color: #c9a84c;
+        }
+
+        /* SERVICES GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 35px;
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            transition: .4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #c9a84c;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* EXPERIENCE */
+        .timeline {
+            border-left: 1px solid rgba(201, 168, 76, 0.2);
+            padding-left: 30px;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* Indicator Dots */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: #c9a84c;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(201,168,76,0.5);
+        }
+
+        .date {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* CONTACT AREA */
+        #contact { text-align: center; }
+        #contact p { margin: 0 auto 30px auto; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 52px; }
+            .nav-links { display: none; }
+            .nav-container { justify-content: center; }
+            .hero-actions { flex-direction: column; }
+        }
+        
+        body { padding-top: 60px; }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
+    <div class="nav-container">
+        <a href="#home" class="logo">S.BHATTARAI</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
 </nav>
 
-<!-- HERO -->
 <section id="home" class="show">
-<h1 class="serif">
-Sujit <span style="color:#c9a84c">Bhattarai</span>
-</h1>
+    <div class="hero-bg-accent"></div>
+    <div class="small">Engineer & Strategist</div>
+    <h1 class="serif">
+        Sujit <span style="color:#c9a84c">Bhattarai</span>
+    </h1>
+    <div class="hero-statement">Engineering growth through code and data logic.</div>
 
-<p>
-A Nepal-based Django developer, digital marketing strategist, and data analyst focused on scalable systems, SEO growth, and data-driven business transformation.
-</p>
+    <p>
+        A Nepal-based Django developer, digital marketing strategist, and data analyst. 
+        I specialize in building scalable backend architectures and data-driven systems that transform business performance.
+    </p>
 
-<a href="#contact" class="btn">Let’s Work Together</a>
+    <div class="hero-actions">
+        <a href="#contact" class="btn">Start a Project</a>
+        <a href="#experience" class="btn btn-secondary">View My Work</a>
+    </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
-<div class="small">SERVICES</div>
-<h2 class="serif">What I Deliver</h2>
+    <div class="small">Expertise</div>
+    <h2 class="serif" style="font-size: 42px;">How I Can Help</h2>
 
-<div class="grid">
-<div class="card">
-<h3>Django Engineering</h3>
-<p>Building scalable backend systems and APIs with clean architecture and performance optimization.</p>
-</div>
+    <div class="grid">
+        <div class="card">
+            <h3>Django Engineering</h3>
+            <p>Architecting robust backend systems and APIs with a focus on security and high-load scalability.</p>
+        </div>
 
-<div class="card">
-<h3>SEO & Marketing</h3>
-<p>Driving organic growth using SEO, ads optimization, and conversion-focused strategies.</p>
-</div>
+        <div class="card">
+            <h3>SEO & Marketing</h3>
+            <p>Deploying technical SEO and performance marketing to drive organic reach and high-intent traffic.</p>
+        </div>
 
-<div class="card">
-<h3>Data Analysis</h3>
-<p>Turning raw data into insights using Python and analytics tools for better decision-making.</p>
-</div>
+        <div class="card">
+            <h3>Data Analysis</h3>
+            <p>Utilizing Python and automation to extract insights from raw data, enabling smarter business decisions.</p>
+        </div>
 
-<div class="card">
-<h3>System Optimization</h3>
-<p>Improving performance, database efficiency, and backend scalability.</p>
-</div>
-</div>
+        <div class="card">
+            <h3>System Optimization</h3>
+            <p>Refining database queries and infrastructure to ensure your platform remains fast and efficient.</p>
+        </div>
+    </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
-<div class="small">EXPERIENCE</div>
-<h2 class="serif">Professional Journey</h2>
+    <div class="small">The Journey</div>
+    <h2 class="serif" style="font-size: 42px;">Professional Experience</h2>
 
-<div class="timeline">
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="date">March 2026 — Present</div>
+            <h3>Digital Marketing Specialist — Hotstone Innovation</h3>
+            <p>Managing full-funnel digital strategy, SEO, and conversion analytics for high-impact growth.</p>
+        </div>
 
-<div class="timeline-item">
-<div class="date">March 2026 — Present</div>
-<h3>Digital Marketing Specialist — Hotstone Innovation</h3>
-<p>Managing SEO, Meta Ads, and performance analytics to optimize conversions and reduce acquisition cost.</p>
-</div>
+        <div class="timeline-item">
+            <div class="date">Sept 2025 — Feb 2026</div>
+            <h3>IT & Digital Marketing Head — Fishtail Tours & Travels</h3>
+            <p>Led digital transformation and international marketing efforts for a premier tourism brand.</p>
+        </div>
 
-<div class="timeline-item">
-<div class="date">September 2025 — February 2026</div>
-<h3>IT & Digital Marketing Head — Fishtail Tours & Travels</h3>
-<p>Handled full digital systems, SEO, and advertising strategy for tourism growth.</p>
-</div>
+        <div class="timeline-item">
+            <div class="date">June 2025 — Sept 2025</div>
+            <h3>Backend Developer — Swoyef Labs Pvt. Ltd.</h3>
+            <p>Developed core Django backends and integrated complex external APIs for client-facing dashboards.</p>
+        </div>
 
-<div class="timeline-item">
-<div class="date">June 2025 — September 2025</div>
-<h3>Backend Developer — Swoyef Labs Pvt. Ltd.</h3>
-<p>Built Django-based backend systems, APIs, and dashboards.</p>
-</div>
-
-<div class="timeline-item">
-<div class="date">March 2025 — May 2025</div>
-<h3>Backend Intern — XTen IT Pvt. Ltd.</h3>
-<p>Worked on AccoX accounting system and backend optimization.</p>
-</div>
-
-</div>
+        <div class="timeline-item">
+            <div class="date">March 2025 — May 2025</div>
+            <h3>Backend Intern — XTen IT Pvt. Ltd.</h3>
+            <p>Supported the engineering of the AccoX accounting system, focusing on database efficiency.</p>
+        </div>
+    </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-<div class="small">CONTACT</div>
-<h2 class="serif">Let’s Build Something Meaningful</h2>
+    <div class="small">Connect</div>
+    <h2 class="serif" style="font-size: 48px; margin-bottom: 20px;">Let’s build something meaningful.</h2>
 
-<p>If you’re looking for a developer who understands engineering + growth strategy, let’s connect.</p>
+    <p>Whether you need a scalable backend or a growth-focused marketing engine, I'm here to help.</p>
 
-<p>Email: infosujit8@gmail.com</p>
-
-<p>
-LinkedIn: 
-<a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" style="color:#c9a84c;text-decoration:none;">
-Connect with me
-</a>
-</p>
-
-<a href="mailto:infosujit8@gmail.com" class="btn">Start Conversation</a>
+    <div style="font-size: 18px; margin-bottom: 10px; color: #c9a84c;">infosujit8@gmail.com</div>
+    
+    <a href="mailto:infosujit8@gmail.com" class="btn" style="margin-top: 15px;">Start Conversation</a>
 </section>
 
 <script>
-const sections=document.querySelectorAll("section");
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-sections.forEach(sec=>observer.observe(sec));
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(sec => observer.observe(sec));
 </script>
 
 </body>
