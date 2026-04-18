@@ -1,204 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="cNjs4ui60B1EuDBdJocMNPRT4Gly5OjvD23d9sawGiA" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sujit Bhattarai | Django Developer, Digital Marketing & Data Analyst Nepal</title>
 
-<meta name="description" content="Sujit Bhattarai is a Django developer, digital marketing specialist, and data analyst based in Nepal. Expert in SEO, backend systems, and analytics-driven growth.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f5f2ea}
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:radial-gradient(circle at top,#111,#070707 60%,#000);
+color:#eae6dc;
+line-height:1.7;
+scroll-behavior:smooth;
+}
 
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px 10px;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav a{
+color:#cfc7b8;
+text-decoration:none;
+font-size:13px;
+letter-spacing:1px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#c9a84c;
+}
+
+/* SECTIONS */
 section{
 max-width:1100px;
 margin:auto;
-padding:80px 20px;
+padding:120px 20px;
 opacity:0;
-transform:translateY(40px);
-transition:1s;
+transform:translateY(50px);
+transition:1s ease;
 }
+
 section.show{opacity:1;transform:translateY(0)}
 
+h1,h2,h3{margin:0}
 .serif{font-family:'Cormorant Garamond',serif}
-h1{font-size:60px}
-h2{font-size:32px;margin-bottom:20px}
-h3{font-size:18px;color:#c9a84c}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+h1{font-size:72px;line-height:1.1}
+h2{font-size:38px;margin-bottom:15px}
+h3{font-size:20px;color:#c9a84c;margin-bottom:10px}
 
-.card{
-background:#111;
-padding:25px;
-border:1px solid #1f1f1f;
-transition:.3s;
-}
-.card:hover{transform:translateY(-5px);border-color:#c9a84c}
+p{color:#cfc7b8;max-width:750px}
 
 .small{
 color:#c9a84c;
+letter-spacing:3px;
 font-size:12px;
-letter-spacing:2px;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
-.timeline{border-left:1px solid #222;padding-left:20px}
-.timeline-item{margin-bottom:30px}
-.date{font-size:12px;color:#aaa;margin-bottom:5px}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.03);
+padding:28px;
+border:1px solid rgba(201,168,76,0.15);
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#c9a84c;
+}
 
 .btn{
 display:inline-block;
-padding:12px 25px;
+padding:14px 30px;
 background:#c9a84c;
 color:#000;
 text-decoration:none;
-margin-top:20px;
+font-weight:500;
+margin-top:25px;
 }
+
+.timeline{
+border-left:1px solid #222;
+padding-left:25px;
+margin-top:30px;
+}
+
+.timeline-item{margin-bottom:35px}
+
+.date{
+font-size:12px;
+color:#999;
+margin-bottom:5px;
+}
+
+/* spacing for fixed navbar */
+body{padding-top:60px}
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</nav>
+
 <!-- HERO -->
-<section class="show">
-<h1 class="serif">Sujit <span style="color:#c9a84c">Bhattarai</span></h1>
+<section id="home" class="show">
+<h1 class="serif">
+Sujit <span style="color:#c9a84c">Bhattarai</span>
+</h1>
 
 <p>
-Sujit Bhattarai is a Nepal-based Django developer, digital marketing specialist, and data analyst who builds scalable backend systems, drives SEO growth, and transforms data into actionable business insights.
+A Nepal-based Django developer, digital marketing strategist, and data analyst focused on scalable systems, SEO growth, and data-driven business transformation.
 </p>
 
-<a href="#contact" class="btn">Hire Me</a>
+<a href="#contact" class="btn">Let’s Work Together</a>
 </section>
 
 <!-- SERVICES -->
-<section>
+<section id="services">
 <div class="small">SERVICES</div>
-<h2 class="serif">What I Offer</h2>
+<h2 class="serif">What I Deliver</h2>
 
 <div class="grid">
 <div class="card">
-<h3>Django Backend Development</h3>
-<p>Designing scalable web applications, APIs, and admin systems using Django and Python.</p>
+<h3>Django Engineering</h3>
+<p>Building scalable backend systems and APIs with clean architecture and performance optimization.</p>
 </div>
 
 <div class="card">
-<h3>SEO & Digital Marketing</h3>
-<p>Improving website visibility, running Meta & Google Ads, and increasing organic traffic.</p>
+<h3>SEO & Marketing</h3>
+<p>Driving organic growth using SEO, ads optimization, and conversion-focused strategies.</p>
 </div>
 
 <div class="card">
 <h3>Data Analysis</h3>
-<p>Analyzing data using Python, Pandas, and visualization tools to drive better decisions.</p>
+<p>Turning raw data into insights using Python and analytics tools for better decision-making.</p>
 </div>
 
 <div class="card">
 <h3>System Optimization</h3>
-<p>Improving performance, fixing bottlenecks, and optimizing systems for speed and scalability.</p>
+<p>Improving performance, database efficiency, and backend scalability.</p>
 </div>
 </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section>
+<section id="experience">
 <div class="small">EXPERIENCE</div>
-<h2 class="serif">Professional Experience</h2>
+<h2 class="serif">Professional Journey</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<div class="date">Mar 2026 — Present</div>
+<div class="date">March 2026 — Present</div>
 <h3>Digital Marketing Specialist — Hotstone Innovation</h3>
-<p>Managing SEO, Meta Ads campaigns, and analytics. Focused on improving traffic, lowering CPC, and increasing conversion rates.</p>
+<p>Managing SEO, Meta Ads, and performance analytics to optimize conversions and reduce acquisition cost.</p>
 </div>
 
 <div class="timeline-item">
-<div class="date">Sep 2025 — Feb 2026</div>
+<div class="date">September 2025 — February 2026</div>
 <h3>IT & Digital Marketing Head — Fishtail Tours & Travels</h3>
-<p>Led IT operations and digital marketing strategies, handled websites, SEO, and advertising campaigns for tourism services.</p>
+<p>Handled full digital systems, SEO, and advertising strategy for tourism growth.</p>
 </div>
 
 <div class="timeline-item">
-<div class="date">Jun 2025 — Sep 2025</div>
+<div class="date">June 2025 — September 2025</div>
 <h3>Backend Developer — Swoyef Labs Pvt. Ltd.</h3>
-<p>Developed backend systems, dashboards, and APIs using Django. Improved database performance and scalability.</p>
+<p>Built Django-based backend systems, APIs, and dashboards.</p>
 </div>
 
 <div class="timeline-item">
-<div class="date">Mar 2025 — May 2025</div>
-<h3>Backend Developer Intern — XTen IT Pvt. Ltd.</h3>
-<p>Worked on Django Ledger-based accounting system (AccoX). Built backend features and optimized workflows.</p>
-</div>
-
-</div>
-</section>
-
-<!-- EDUCATION -->
-<section>
-<div class="small">EDUCATION</div>
-<h2 class="serif">Academic Background</h2>
-
-<div class="grid">
-<div class="card">
-<h3>BSc. CSIT</h3>
-<p>Soch College of IT, Pokhara — Completed 2024</p>
-</div>
-
-<div class="card">
-<h3>Higher Secondary (+2)</h3>
-<p>Srijana Secondary School — Completed 2020</p>
-</div>
-
-<div class="card">
-<h3>Secondary Education</h3>
-<p>Jeev Juna Secondary School — Completed 2018</p>
-</div>
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section>
-<div class="small">PROJECTS</div>
-<h2 class="serif">Featured Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>License Plate Detection System</h3>
-<p>Built a real-time system using OpenCV and OCR to detect vehicle plate numbers for automation in parking/security.</p>
-</div>
-
-<div class="card">
-<h3>Traffic Analytics Dashboard</h3>
-<p>Created dashboards to analyze traffic data and improve digital marketing strategies.</p>
-</div>
-
-<div class="card">
-<h3>Sales Data Analysis</h3>
-<p>Performed data analysis to identify trends and improve business decision-making.</p>
-</div>
-
-<div class="card">
-<h3>Django Ledger System</h3>
-<p>Developed accounting and product management system using Django for business operations.</p>
-</div>
-
-<div class="card">
-<h3>Parking Management System</h3>
-<p>Built a Flutter-based system to manage parking slots, reservations, and payments.</p>
-</div>
-
-<div class="card">
-<h3>SEO Campaign Optimization</h3>
-<p>Worked on improving website rankings, keyword optimization, and traffic growth strategies.</p>
+<div class="date">March 2025 — May 2025</div>
+<h3>Backend Intern — XTen IT Pvt. Ltd.</h3>
+<p>Worked on AccoX accounting system and backend optimization.</p>
 </div>
 
 </div>
@@ -207,25 +210,32 @@ Sujit Bhattarai is a Nepal-based Django developer, digital marketing specialist,
 <!-- CONTACT -->
 <section id="contact">
 <div class="small">CONTACT</div>
-<h2 class="serif">Contact Sujit Bhattarai</h2>
+<h2 class="serif">Let’s Build Something Meaningful</h2>
+
+<p>If you’re looking for a developer who understands engineering + growth strategy, let’s connect.</p>
 
 <p>Email: infosujit8@gmail.com</p>
 
-<a href="mailto:infosujit8@gmail.com" class="btn">Start a Project</a>
-</section>
-<a href="https://www.linkedin.com/in/sujit-bhattarai-ab6ba62ba/" target="_blank" class="btn">
-View LinkedIn Profile
+<p>
+LinkedIn: 
+<a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" style="color:#c9a84c;text-decoration:none;">
+Connect with me
 </a>
+</p>
+
+<a href="mailto:infosujit8@gmail.com" class="btn">Start Conversation</a>
+</section>
+
 <script>
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries=>{
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add("show");
 }
 });
 });
-sections.forEach(section=>observer.observe(section));
+sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
